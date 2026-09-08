@@ -13,6 +13,9 @@
   "categories": {
     "correctness": "error"
   },
+  "rules": {
+    "nextjs/no-img-element": "off"
+  },
   "env": {
     "builtin": true,
     "browser": true,
