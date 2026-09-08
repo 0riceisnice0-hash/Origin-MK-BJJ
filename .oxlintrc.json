@@ -14,7 +14,7 @@
     "correctness": "error"
   },
   "rules": {
-    "nextjs/no-img-element": "off"
+    "next/no-img-element": "off"
   },
   "env": {
     "builtin": true,
