@@ -56,10 +56,10 @@ h1 em,h2 em { color:var(--gold); font-weight:400; }
 .hero-card a { display:flex; align-items:center; gap:5px; width:max-content; margin-top:13px; border-bottom:1px solid rgba(0,0,0,.35); font-size:.7rem; font-weight:900; }
 .orbit { position:absolute; z-index:3; border:1px solid rgba(242,212,120,.35); border-radius:50%; pointer-events:none; }
 .orbit-one { width:250px; height:250px; top:65px; right:-100px; }.orbit-two { width:150px; height:150px; top:116px; right:-50px; }
-.hero-ticker { position:relative; z-index:4; height:75px; margin-top:-23px; display:flex; align-items:center; justify-content:center; overflow:hidden; background:var(--gold); color:var(--black); clip-path:polygon(0 21px,100% 0,100% calc(100% - 21px),0 100%); }
+.hero-ticker { position:relative; z-index:1; height:75px; margin-top:-23px; display:flex; align-items:center; justify-content:center; overflow:hidden; background:var(--gold); color:var(--black); clip-path:polygon(0 21px,100% 0,100% 100%,0 100%); }
 .hero-ticker div { width:max-content; min-width:max-content; margin:0; white-space:nowrap; word-spacing:20px; font-size:.75rem; font-weight:900; letter-spacing:.12em; transform:rotate(-1.02deg); transform-origin:center; }
 .section { padding:115px 0; }
-.schedule-section { position:relative; z-index:1; margin-top:-21px; padding-top:136px; }
+.schedule-section { position:relative; z-index:2; margin-top:-21px; padding-top:136px; clip-path:polygon(0 21px,100% 0,100% 100%,0 100%); }
 .section-heading { display:grid; grid-template-columns:1.08fr .92fr; align-items:end; gap:90px; margin-bottom:58px; }
 .section-heading h2,.approach-copy h2,.beginner-grid h2,.location-copy h2 { font-size:clamp(3.2rem,5.5vw,5.5rem); }
 .section-intro > p,.section-heading > p { margin:0 0 20px; color:var(--muted); font-size:1.04rem; }
