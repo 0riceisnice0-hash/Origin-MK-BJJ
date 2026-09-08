@@ -1,4 +1,5 @@
 import { ArrowDownRight, ArrowUpRight, CalendarDays, Clock3, MapPin, ShieldCheck, Sparkles, Users } from 'lucide-react';
+/* oxlint-disable next/no-img-element -- GitHub Pages uses static, supplied coach images; next/image triggers a vinext hydration issue. */
 
 export const dynamic = 'force-static';
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
