@@ -23,11 +23,18 @@ const coaches = [
 
 const principles = [['01', 'Position before submission', 'Control creates opportunity.'], ['02', 'Technique before force', 'Efficiency beats unnecessary strength.'], ['03', 'Intelligence before chaos', 'Understand the problem before you solve it.'], ['04', 'Pressure creates reaction', 'Make them respond—then use the opening.']];
 
+const trainingImages = [
+  { src: '/training/no-gi-throw.jpg', alt: 'No-Gi students practising a takedown' },
+  { src: '/training/no-gi-grappling.jpg', alt: 'Students training No-Gi grappling on the mats' },
+  { src: '/training/gi-standup.jpg', alt: 'Gi students working on standing grips' },
+  { src: '/training/gi-groundwork.jpg', alt: 'Gi students practising positional control' },
+];
+
 export default function Home() {
   return <main id="top">
     <a className="skip-link" href="#content">Skip to content</a>
     <div className="launch-bar"><div className="shell launch-inner"><span><Sparkles size={14} /> New academy. New home. Same team.</span><a href="#location">Opening Monday 5 October · Kiln Farm, MK</a></div></div>
-    <header className="site-header"><div className="shell nav-wrap"><a className="brand" href="#top" aria-label="Origin MK BJJ home"><span className="brand-mark">O</span><span><strong>ORIGIN</strong><small>MK · Brazilian Jiu-Jitsu</small></span></a><nav aria-label="Main navigation"><a href="#timetable">Timetable</a><a href="#coaches">Coaches</a><a href="#approach">Our approach</a><a href="#location">Find us</a></nav><a className="nav-cta" href="#timetable">View classes <ArrowDownRight size={17} /></a></div></header>
+    <header className="site-header"><div className="shell nav-wrap"><a className="brand" href="#top" aria-label="Origin MK BJJ home"><span className="brand-mark">O</span><span><strong>ORIGIN</strong><small>MK · Brazilian Jiu-Jitsu</small></span></a><nav aria-label="Main navigation"><a href="#training">Training</a><a href="#timetable">Timetable</a><a href="#coaches">Coaches</a><a href="#approach">Our approach</a><a href="#location">Find us</a></nav><a className="nav-cta" href="#timetable">View classes <ArrowDownRight size={17} /></a></div></header>
 
     <div id="content">
       <section className="hero">
@@ -49,6 +56,24 @@ export default function Home() {
         </div>
       </section>
       <div className="hero-ticker" aria-hidden="true"><div>GI <span>✦</span> NO-GI <span>✦</span> JITZJUDO <span>✦</span> OPEN MAT <span>✦</span> BEGINNERS <span>✦</span> GI <span>✦</span> NO-GI</div></div>
+
+      <section className="training-section" id="training">
+        <div className="shell training-intro">
+          <div>
+            <p className="eyebrow"><span /> Come and train with us</p>
+            <h2>Curious about<br /><em>Brazilian Jiu-Jitsu?</em></h2>
+          </div>
+          <div className="training-copy">
+            <p>Come and experience Origin MK BJJ.</p>
+            <p>Whether you’re a complete beginner or an experienced grappler, everyone is welcome. Great training, a friendly atmosphere and a strong community—right here in Milton Keynes.</p>
+            <div className="training-offer"><strong>Your first class is free.</strong><span>No pressure. Just turn up ready to learn.</span></div>
+            <div className="training-actions"><a className="button button-gold" href="#timetable">Choose a class <CalendarDays size={19} /></a><a className="text-link" href="#location">Find the academy <ArrowDownRight size={18} /></a></div>
+          </div>
+        </div>
+        <div className="shell training-gallery">
+          {trainingImages.map((image, index) => <figure className={`training-shot training-shot-${index + 1}`} key={image.src}><img src={asset(image.src)} alt={image.alt} loading="lazy" /></figure>)}
+        </div>
+      </section>
 
       <section className="section schedule-section" id="timetable"><div className="shell"><div className="section-heading"><div><p className="eyebrow dark"><span /> Weekly timetable</p><h2>More mat time.<br /><em>More ways to train.</em></h2></div><div className="section-intro"><p>Morning person? Lunch-break grappler? Evening regular? Choose the sessions that fit your week. Gi and No-Gi alternate where shown.</p><span><Clock3 size={17} /> Timetable starts Monday 5 October 2026</span></div></div><div className="schedule-list">{schedule.map(({ day, sessions }, dayIndex) => <article className="day-row" key={day}><div className="day-title"><span>0{dayIndex + 1}</span><h3>{day}</h3></div><div className={`sessions sessions-${sessions.length}`}>{sessions.map(([time, title, detail]) => <div className="session" key={`${day}-${time}`}><time>{time}</time><strong>{title}</strong><span>{detail}</span></div>)}</div></article>)}<article className="day-row closed"><div className="day-title"><span>07</span><h3>Sunday</h3></div><p>Closed—for now.</p></article></div><div className="maat-band"><div><span className="maat-label">MAAT</span><div><h3>Your training, all in one place.</h3><p>Class bookings, membership, club announcements, attendance and belt progress will be managed through the MAAT app.</p></div></div><span className="maat-status">Member setup coming soon</span></div></div></section>
 
