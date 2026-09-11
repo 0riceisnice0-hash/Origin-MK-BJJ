@@ -77,7 +77,30 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section schedule-section" id="timetable"><div className="shell"><div className="section-heading"><div><p className="eyebrow dark"><span /> Weekly timetable</p><h2>More mat time.<br /><em>More ways to train.</em></h2></div><div className="section-intro"><p>Morning person? Lunch-break grappler? Evening regular? Choose the sessions that fit your week. Gi and No-Gi alternate where shown.</p><span><Clock3 size={17} /> Timetable starts Monday 5 October 2026</span></div></div><div className="schedule-list" style={{ backgroundImage: `linear-gradient(rgba(5,7,8,.84),rgba(5,7,8,.9)),url("${asset('/brand/origin-logo.jpg')}")` }}>{schedule.map(({ day, sessions }, dayIndex) => <article className="day-row" key={day}><div className="day-title"><span>0{dayIndex + 1}</span><h3>{day}</h3></div><div className={`sessions sessions-${sessions.length}`}>{sessions.map(([time, title, detail]) => <div className="session" key={`${day}-${time}`}><time>{time}</time><strong>{title}</strong><span>{detail}</span></div>)}</div></article>)}<article className="day-row closed"><div className="day-title"><span>07</span><h3>Sunday</h3></div><p>Closed—for now.</p></article></div><div className="maat-band"><div><span className="maat-label">MAAT</span><div><h3>Your training, all in one place.</h3><p>Class bookings, membership, club announcements, attendance and belt progress will be managed through the MAAT app.</p></div></div><span className="maat-status">Member setup coming soon</span></div><div className="schedule-photos"><figure><img src={asset('/training/no-gi-wrestling.jpg')} alt="Students drilling No-Gi wrestling" loading="lazy" /></figure><figure><img src={asset('/training/coach-observing.jpg')} alt="A coach watching students train" loading="lazy" /></figure><p><strong>Drill. Test. Refine.</strong><span>Every class combines clear coaching with time to put the work into practice.</span></p></div></div></section>
+      <section className="section schedule-section" id="timetable">
+        <div className="shell">
+          <div className="section-heading">
+            <div><p className="eyebrow dark"><span /> Weekly timetable</p><h2>More mat time.<br /><em>More ways to train.</em></h2></div>
+            <div className="section-intro"><p>Morning person? Lunch-break grappler? Evening regular? Choose the sessions that fit your week. Gi and No-Gi alternate where shown.</p><span><Clock3 size={17} /> Timetable starts Monday 5 October 2026</span></div>
+          </div>
+          <div className="timetable-board">
+            <div className="timetable-masthead">
+              <div><span>Origin MK BJJ</span><h3>Weekly timetable</h3><p>Gi · No-Gi · JitzJudo · Open Mat</p></div>
+              <img src={asset('/brand/origin-logo.jpg')} alt="" aria-hidden="true" />
+            </div>
+            <div className="schedule-days">
+              {schedule.map(({ day, sessions }, dayIndex) => <article className="day-card" key={day}>
+                <header><span>0{dayIndex + 1}</span><h3>{day}</h3></header>
+                <div className="day-sessions">{sessions.map(([time, title, detail]) => <div className="session-card" key={`${day}-${time}`}><time>{time}</time><strong>{title}</strong><span>{detail}</span></div>)}</div>
+              </article>)}
+              <article className="day-card day-card-closed"><header><span>07</span><h3>Sunday</h3></header><p>Closed—for now.</p></article>
+            </div>
+            <div className="timetable-footer"><span>Unit 8 · Potters Lane · Kiln Farm</span><strong>Milton Keynes · MK11 3HE</strong></div>
+          </div>
+          <div className="maat-band"><div><span className="maat-label">MAAT</span><div><h3>Your training, all in one place.</h3><p>Class bookings, membership, club announcements, attendance and belt progress will be managed through the MAAT app.</p></div></div><span className="maat-status">Member setup coming soon</span></div>
+          <div className="schedule-photos"><figure><img src={asset('/training/no-gi-wrestling.jpg')} alt="Students drilling No-Gi wrestling" loading="lazy" /></figure><figure><img src={asset('/training/coach-observing.jpg')} alt="A coach watching students train" loading="lazy" /></figure><p><strong>Drill. Test. Refine.</strong><span>Every class combines clear coaching with time to put the work into practice.</span></p></div>
+        </div>
+      </section>
 
       <section className="coaches-section" id="coaches"><div className="shell"><div className="section-heading light"><div><p className="eyebrow"><span /> Coaching team</p><h2>Different styles.<br /><em>One standard.</em></h2></div><p>Deep experience across BJJ, Judo and modern No-Gi grappling gives every student a rounded, pressure-tested education.</p></div><div className="coach-grid">{coaches.map((coach, index) => <article className="coach-card" key={coach.name}><figure><img src={asset(coach.image)} alt={`${coach.name}, ${coach.grade}`} loading={index < 2 ? 'eager' : 'lazy'} /></figure><div className="coach-number">0{index + 1}</div><div className="coach-copy"><p>{coach.role}</p><h3>{coach.name}</h3><strong>{coach.grade}</strong><span>{coach.focus}</span><p className="coach-bio">{coach.bio}</p></div></article>)}</div><figure className="coaches-action"><img src={asset('/training/no-gi-open-guard.jpg')} alt="No-Gi students working through an open guard position" loading="lazy" /><figcaption>Coaching that holds up when the pace rises.</figcaption></figure></div></section>
 

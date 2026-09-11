@@ -84,17 +84,27 @@ h1 em,h2 em { color:var(--gold); font-weight:400; }
 .section-heading h2,.approach-copy h2,.beginner-grid h2,.location-copy h2 { font-size:clamp(3.2rem,5.5vw,5.5rem); }
 .section-intro > p,.section-heading > p { margin:0 0 20px; color:var(--muted); font-size:1.04rem; }
 .section-intro > span { display:flex; align-items:center; gap:8px; font-size:.75rem; font-weight:900; letter-spacing:.06em; text-transform:uppercase; }
-.schedule-list { overflow:hidden; border:1px solid #3b3321; background-position:center; background-size:cover; box-shadow:0 28px 70px rgba(0,0,0,.2); }
-.day-row { display:grid; grid-template-columns:220px minmax(0,1fr); gap:0; min-height:118px; margin-bottom:1px; background:rgba(8,8,8,.68); color:var(--white); border-bottom:1px solid rgba(217,184,92,.22); }
-.day-row:last-child { margin-bottom:0; }
-.day-title { display:flex; align-items:center; gap:16px; padding:25px 27px; background:rgba(0,0,0,.46); color:var(--white); }
-.day-title > span { color:var(--gold); font:italic .82rem Georgia,serif; }.day-title h3 { margin:0; font:400 2rem Georgia,serif; letter-spacing:-.04em; }
-.sessions { display:grid; min-width:0; }
-.sessions-1 { grid-template-columns:1fr; }.sessions-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }.sessions-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
-.session { position:relative; display:flex; flex-direction:column; justify-content:center; gap:5px; min-width:0; padding:22px 26px; border-left:1px solid rgba(255,255,255,.14); }
-.session::before { content:''; position:absolute; left:26px; top:0; width:42px; height:3px; background:var(--gold); }
-.session time { color:var(--gold-bright); font-size:.75rem; font-weight:900; letter-spacing:.04em; }.session strong { font:400 1.16rem/1.2 Georgia,serif; }.session span,.closed > p { color:rgba(255,255,255,.65); font-size:.76rem; line-height:1.4; }
-.closed { align-items:stretch; }.closed > p { display:flex; align-items:center; margin:0; padding:25px 27px; border-left:1px solid rgba(255,255,255,.14); font:italic 1.05rem Georgia,serif; }
+.timetable-board { overflow:hidden; border:1px solid #3a3120; background:radial-gradient(circle at 78% 12%,rgba(217,184,92,.14),transparent 30%),linear-gradient(145deg,#071117,#090909 58%,#17130c); color:var(--white); box-shadow:0 30px 80px rgba(0,0,0,.25); }
+.timetable-masthead { min-height:190px; display:flex; align-items:center; justify-content:space-between; gap:38px; padding:28px 38px; border-bottom:1px solid rgba(217,184,92,.32); }
+.timetable-masthead > div > span { color:var(--gold); font-size:.7rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase; }
+.timetable-masthead h3 { margin:5px 0 2px; font:400 clamp(2.8rem,5vw,4.8rem)/.95 Georgia,serif; letter-spacing:-.055em; }
+.timetable-masthead p { margin:8px 0 0; color:rgba(255,255,255,.55); font-size:.76rem; font-weight:800; letter-spacing:.11em; text-transform:uppercase; }
+.timetable-masthead img { flex:0 0 auto; width:255px; height:132px; object-fit:cover; object-position:center; mix-blend-mode:screen; }
+.schedule-days { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; padding:22px; }
+.day-card { min-width:0; min-height:252px; padding:19px; border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.045); }
+.day-card header { display:flex; align-items:baseline; gap:10px; padding-bottom:12px; border-bottom:1px solid rgba(217,184,92,.28); }
+.day-card header span { color:var(--gold); font:italic .75rem Georgia,serif; }
+.day-card h3 { margin:0; font:400 1.7rem Georgia,serif; letter-spacing:-.04em; }
+.day-sessions { display:flex; flex-direction:column; gap:10px; padding-top:14px; }
+.session-card { min-width:0; padding:12px 13px; border-left:3px solid var(--gold); background:rgba(37,100,116,.28); }
+.session-card time,.session-card strong,.session-card span { display:block; }
+.session-card time { color:var(--gold-bright); font-size:.72rem; font-weight:900; letter-spacing:.03em; }
+.session-card strong { margin:3px 0; font:400 1rem/1.2 Georgia,serif; }
+.session-card span { color:rgba(255,255,255,.6); font-size:.7rem; line-height:1.4; }
+.day-card-closed { display:flex; flex-direction:column; }
+.day-card-closed > p { margin:auto 0; color:rgba(255,255,255,.5); font:italic 1rem Georgia,serif; }
+.timetable-footer { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:17px 22px; border-top:1px solid rgba(217,184,92,.3); color:rgba(255,255,255,.54); font-size:.7rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+.timetable-footer strong { color:var(--gold-bright); }
 .maat-band { margin-top:48px; padding:28px 32px; display:flex; align-items:center; justify-content:space-between; gap:25px; background:var(--black); color:white; }
 .maat-band > div { display:flex; align-items:center; gap:25px; }.maat-label { color:var(--gold); font:italic 900 2.1rem Georgia,serif; letter-spacing:.05em; }
 .maat-band h3 { margin:0 0 3px; font:400 1.35rem Georgia,serif; }.maat-band p { margin:0; max-width:665px; color:rgba(255,255,255,.57); font-size:.78rem; }
@@ -172,6 +182,7 @@ footer { padding:65px 0 28px; background:#050505; color:white; }.footer-main { d
   .training-shot-2{grid-column:2;grid-row:1}
   .training-shot-3{grid-column:1;grid-row:2}
   .training-shot-4{display:block;grid-column:2;grid-row:2}
+  .schedule-days{grid-template-columns:repeat(2,minmax(0,1fr))}
   .coaches-action img{width:100%;margin-left:0;object-position:center 25%}
   .approach-section{min-height:0;padding:58px 0}
   .approach-grid{grid-template-columns:1fr 1fr;gap:42px}
@@ -216,6 +227,14 @@ footer { padding:65px 0 28px; background:#050505; color:white; }.footer-main { d
   .training-actions .button{min-height:46px;padding:0 14px}
   .training-gallery{grid-template-rows:108px 108px;height:222px;gap:6px}
   .training-shot-1,.training-shot-2,.training-shot-3,.training-shot-4{display:block}
+  .timetable-masthead{min-height:0;padding:24px;align-items:flex-end}
+  .timetable-masthead h3{font-size:2.45rem}
+  .timetable-masthead p{font-size:.62rem;line-height:1.5}
+  .timetable-masthead img{width:112px;height:82px}
+  .schedule-days{grid-template-columns:1fr;padding:12px;gap:9px}
+  .day-card{min-height:0;padding:16px}
+  .day-sessions{display:grid;grid-template-columns:1fr;gap:8px}
+  .timetable-footer{align-items:flex-start;flex-direction:column;gap:4px;padding:15px 18px;line-height:1.4}
   .coaches-action img{object-position:center 24%}
   .approach-section{padding:42px 0}
   .approach-grid{grid-template-columns:1fr;gap:24px}
