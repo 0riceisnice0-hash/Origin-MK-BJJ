@@ -142,7 +142,25 @@ export default function Home() {
 
       <section className="location-section" id="location"><div className="shell location-grid"><div className="location-visual"><iframe title="Map showing Origin MK BJJ at Unit 8 Potters Lane, Kiln Farm" src="https://www.google.com/maps?q=Unit+8,+Potters+Lane,+Kiln+Farm,+Milton+Keynes+MK11+3HE&z=15&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade" /></div><div className="location-copy"><p className="eyebrow dark"><span /> Our new home</p><h2>Origin starts here.</h2><p className="address">Unit 8, Potters Lane<br />Kiln Farm<br />Milton Keynes MK11 3HE</p><p>Doors open Monday 5 October 2026. Allow a little extra time on your first visit to find the unit and get settled before class.</p><a className="button button-dark" href="https://www.google.com/maps/search/?api=1&query=Unit+8+Potters+Lane+Kiln+Farm+Milton+Keynes+MK11+3HE" target="_blank" rel="noreferrer">Open in Google Maps <ArrowUpRight size={18} /></a></div></div></section>
 
-      <section className="contact-section" id="contact"><div className="shell contact-grid"><div className="contact-intro"><p className="eyebrow"><span /> Contact Origin</p><h2>Questions before<br />your first class?</h2></div><div className="contact-copy"><p>Ask us about classes, getting started or visiting the new academy. We’ll get back to you as soon as we can.</p><a className="contact-email" href="mailto:originmkbjj@gmail.com"><Mail size={22} /><span><small>Email Origin MK BJJ</small><strong>originmkbjj@gmail.com</strong></span><ArrowUpRight size={20} /></a></div></div></section>
+      <section className="contact-section" id="contact">
+        <div className="shell contact-grid">
+          <div className="contact-intro"><p className="eyebrow"><span /> Contact Origin</p><h2>Questions before<br />your first class?</h2></div>
+          <div className="contact-copy">
+            <p>Ask us about classes, getting started or visiting the new academy. We’ll get back to you as soon as we can.</p>
+            {/* Replace REPLACE_WITH_FORM_ID with the live Formspree form ID when the account is ready. */}
+            <form className="contact-form" action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST">
+              <input type="hidden" name="_subject" value="New Origin MK BJJ website enquiry" />
+              <div className="form-row">
+                <label><span>Name</span><input type="text" name="name" autoComplete="name" required /></label>
+                <label><span>Email</span><input type="email" name="email" autoComplete="email" required /></label>
+              </div>
+              <label><span>How can we help?</span><textarea name="message" rows={4} required /></label>
+              <button type="submit">Send enquiry <ArrowUpRight size={18} /></button>
+            </form>
+            <a className="contact-email" href="mailto:originmkbjj@gmail.com"><Mail size={20} /><span><small>Or email us directly</small><strong>originmkbjj@gmail.com</strong></span><ArrowUpRight size={18} /></a>
+          </div>
+        </div>
+      </section>
     </div>
 
     <footer><div className="shell footer-main"><a className="brand" href="#top"><img className="brand-logo" src={asset('/brand/origin-logo.jpg')} alt="Origin Brazilian Jiu-Jitsu Academy MK" loading="lazy" /></a><p>Strong fundamentals. Technical precision.<br />Progressive development. Pressure-tested Jiu-Jitsu.</p><div><a href="#timetable">Timetable</a><a href="#coaches">Coaches</a><a href="#location">Find us</a><a href="#contact">Contact</a></div></div><div className="shell footer-bottom"><span>© 2026 Origin MK BJJ</span><span>Proudly under The Nick Brooks Association</span><a href="#top">Back to top ↑</a></div></footer>

@@ -156,6 +156,16 @@ h1 em,h2 em { color:var(--gold); font-weight:400; }
 .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:90px; align-items:center; }
 .contact-section h2 { margin:0; font:400 clamp(3.2rem,5.5vw,5.5rem)/.92 Georgia,'Times New Roman',serif; letter-spacing:-.065em; }
 .contact-copy > p { max-width:500px; margin:0 0 24px; font-size:1.03rem; }
+.contact-form { display:grid; gap:15px; padding:26px; background:var(--black); color:white; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.contact-form label { display:grid; gap:6px; min-width:0; }
+.contact-form label > span { font-size:.65rem; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
+.contact-form input,.contact-form textarea { width:100%; border:1px solid rgba(255,255,255,.24); border-radius:0; outline:0; background:#171717; color:white; font:inherit; }
+.contact-form input { min-height:46px; padding:0 13px; }
+.contact-form textarea { min-height:96px; padding:11px 13px; resize:vertical; }
+.contact-form input:focus,.contact-form textarea:focus { border-color:var(--gold-bright); box-shadow:0 0 0 1px var(--gold-bright); }
+.contact-form button { min-height:48px; display:inline-flex; align-items:center; justify-content:center; gap:8px; border:0; background:var(--gold); color:var(--black); font-size:.76rem; font-weight:900; cursor:pointer; }
+.contact-form button:hover { background:var(--gold-bright); }
 .contact-email { display:flex; align-items:center; gap:16px; width:max-content; max-width:100%; padding:15px 0; border-bottom:1px solid rgba(0,0,0,.38); transition:border-color .2s ease; }
 .contact-email:hover { border-color:var(--black); }
 .contact-email > span { min-width:0; display:flex; flex:1; flex-direction:column; }
@@ -361,6 +371,11 @@ footer { padding:65px 0 28px; background:#050505; color:white; }.footer-main { d
   .contact-section{padding:42px 0}
   .contact-grid{gap:24px}
   .contact-copy>p{margin-bottom:16px;font-size:.92rem;line-height:1.5}
+  .contact-form{gap:12px;padding:18px}
+  .form-row{grid-template-columns:1fr;gap:12px}
+  .contact-form input{min-height:42px}
+  .contact-form textarea{min-height:78px}
+  .contact-form button{min-height:44px}
   .contact-email{width:100%;padding:13px 0}
   .contact-email strong{font-size:1.05rem}
   footer{padding:44px 0 22px}
