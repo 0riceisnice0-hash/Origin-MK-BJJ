@@ -1,4 +1,4 @@
-import { ArrowDownRight, ArrowUpRight, CalendarDays, Clock3, Mail, MapPin, ShieldCheck, Sparkles, Users } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, CalendarDays, Clock3, Mail, ShieldCheck, Sparkles, Users } from 'lucide-react';
 /* oxlint-disable next/no-img-element -- GitHub Pages uses static, supplied coach images; next/image triggers a vinext hydration issue. */
 
 export const dynamic = 'force-static';
@@ -15,10 +15,42 @@ const schedule = [
 ];
 
 const coaches = [
-  { name: 'Alan Mineards', role: 'Head coach', grade: 'BJJ Black Belt · Judo 2nd Dan', image: '/coaches/alan.jpg', focus: 'JitzJudo · Gi · complete grappling', bio: 'Former British Judo Champion. Alan connects elite stand-up fundamentals with pressure, positional control and submission-focused Jiu-Jitsu.' },
-  { name: 'Ricki Shortland', role: 'No-Gi coach', grade: 'BJJ Black Belt · 10th Planet Brown Belt', image: '/coaches/ricki.png', focus: 'No-Gi · transitions · submission chains', bio: 'A modern, movement-led approach built around angles, leverage and connected attacks—not strength for strength’s sake.' },
-  { name: 'Steve Freezer', role: 'BJJ & Judo coach', grade: 'BJJ Brown Belt · Judo Black Belt', image: '/coaches/steve.png', focus: 'Gi · takedowns · lapel systems', bio: 'British Masters National BJJ Champion and British Masters Judo medallist, specialising in the path from takedown to control to submission.' },
-  { name: 'Peter Olsson', role: 'Coach & mentor', grade: '2nd Degree BJJ Black Belt', image: '/coaches/peter.png', focus: 'Fundamentals · practical technique · development', bio: 'Founder of Viking BJJ and an experienced coach known for high standards, clear teaching and making the learning process enjoyable.' },
+  {
+    name: 'Alan Mineards', role: 'Head coach', grade: 'BJJ Black Belt · Judo 2nd Dan · Former British Judo Champion', image: '/coaches/alan.jpg', focus: 'JitzJudo · Gi · complete grappling',
+    bio: 'Alan brings decades of experience in Judo and Brazilian Jiu-Jitsu to the development of a complete, modern grappling programme.',
+    profile: [
+      "Alan began his martial arts journey at Northampton Judo Club under Sensei Clive Douglas. His Judo background built an exceptional understanding of balance, movement, timing, throwing mechanics, gripping, positional control and pressure.",
+      "Driven to expand his skills, Alan cross-trained in Brazilian Jiu-Jitsu and developed a fluid, submission-focused style. He achieved his BJJ Black Belt under Peter Olsson and Ed Ingamells, continuing his development within a respected UK lineage.",
+      "His classes unite Judo-based takedowns, BJJ positional systems, submission grappling and pressure-based control. Alan’s goal is to help every student understand not only what to do, but why they are doing it."
+    ],
+  },
+  {
+    name: 'Ricki Shortland', role: 'No-Gi coach', grade: 'BJJ Black Belt · 10th Planet Brown Belt · No-Gi Specialist', image: '/coaches/ricki.png', focus: 'No-Gi · transitions · submission chains',
+    bio: 'Ricki brings a highly technical, modern and dynamic approach to No-Gi Brazilian Jiu-Jitsu.',
+    profile: [
+      "Rather than relying on strength or athleticism, Ricki teaches students to use angles, timing, frames, leverage, movement and pressure to create opportunities and systematically break down opponents.",
+      "His coaching connects takedowns and entries, wrestling, guard passing, leg entanglements, back attacks, front headlocks, submission chains and scrambles into one adaptable system.",
+      "Ricki teaches students to understand how one attack creates another, how pressure creates reactions and how those reactions build the next attack. His sessions encourage experimentation, problem-solving and a modern submission-grappling skillset."
+    ],
+  },
+  {
+    name: 'Steve Freezer', role: 'BJJ & Judo coach', grade: 'Judo Black Belt · BJJ Brown Belt · British Masters Champion', image: '/coaches/steve.png', focus: 'Gi · takedowns · lapel systems',
+    bio: 'Steve combines extensive experience in Judo, Brazilian Jiu-Jitsu and competitive grappling with a coaching approach built around technical efficiency.',
+    profile: [
+      "A British Masters National BJJ Champion and British Masters Judo bronze medallist, Steve understands how to apply technique against genuine resistance.",
+      "He specialises in connecting every phase of grappling: takedown, transition, control and submission. His teaching covers Judo gripping, BJJ positional fundamentals, Gi and lapel control, top pressure and intelligent problem-solving.",
+      "Steve’s students learn to control and submit through timing, leverage, positioning and pressure rather than physical strength. Techniques are pressure-tested so students can recognise situations, make decisions and execute when an opponent is trying to stop them."
+    ],
+  },
+  {
+    name: 'Peter Olsson', role: 'Coach & mentor', grade: '2nd Degree BJJ Black Belt · Founder of Viking BJJ', image: '/coaches/peter.png', focus: 'Fundamentals · practical technique · development',
+    bio: 'Peter is an experienced coach, mentor and lifelong student of Jiu-Jitsu who combines strong fundamentals with an enjoyable learning environment.',
+    profile: [
+      "Peter founded Viking Brazilian Jiu-Jitsu in 2016 and has built a reputation for understanding what students need, whether they are taking their first class or developing an advanced game.",
+      "His training includes work with 7th Degree Coral Belt Mauricio Gomes and 3rd Degree Black Belt Nick Brooks. He teaches practical technique, pressure testing and genuine understanding rather than simple memorisation.",
+      "Peter recognises that every student learns differently and trains for different reasons. His classes balance technical detail and high standards with humour, curiosity and an atmosphere where people can progress at their own pace."
+    ],
+  },
 ];
 
 const principles = [['01', 'Position before submission', 'Control creates opportunity.'], ['02', 'Technique before force', 'Efficiency beats unnecessary strength.'], ['03', 'Intelligence before chaos', 'Understand the problem before you solve it.'], ['04', 'Pressure creates reaction', 'Make them respond—then use the opening.']];
@@ -97,12 +129,12 @@ export default function Home() {
             </div>
             <div className="timetable-footer"><span>Unit 8 · Potters Lane · Kiln Farm</span><strong>Milton Keynes · MK11 3HE</strong></div>
           </div>
-          <div className="maat-band"><div><span className="maat-label">MAAT</span><div><h3>Your training, all in one place.</h3><p>Class bookings, membership, club announcements, attendance and belt progress will be managed through the MAAT app.</p></div></div><span className="maat-status">Member setup coming soon</span></div>
+          <div className="maat-band"><div><span className="maat-label">MAAT</span><div><h3>Your training, all in one place.</h3><p>Join the academy, manage class bookings, view club announcements and follow your progress through the MAAT app.</p></div></div><a className="maat-status" href="https://maat-app.link/Gxij8SlZe6b" target="_blank" rel="noreferrer">Join Origin on MAAT <ArrowUpRight size={15} /></a></div>
           <div className="schedule-photos"><figure><img src={asset('/training/no-gi-wrestling.jpg')} alt="Students drilling No-Gi wrestling" loading="lazy" /></figure><figure><img src={asset('/training/coach-observing.jpg')} alt="A coach watching students train" loading="lazy" /></figure><p><strong>Drill. Test. Refine.</strong><span>Every class combines clear coaching with time to put the work into practice.</span></p></div>
         </div>
       </section>
 
-      <section className="coaches-section" id="coaches"><div className="shell"><div className="section-heading light"><div><p className="eyebrow"><span /> Coaching team</p><h2>Different styles.<br /><em>One standard.</em></h2></div><p>Deep experience across BJJ, Judo and modern No-Gi grappling gives every student a rounded, pressure-tested education.</p></div><div className="coach-grid">{coaches.map((coach, index) => <article className="coach-card" key={coach.name}><figure><img src={asset(coach.image)} alt={`${coach.name}, ${coach.grade}`} loading={index < 2 ? 'eager' : 'lazy'} /></figure><div className="coach-number">0{index + 1}</div><div className="coach-copy"><p>{coach.role}</p><h3>{coach.name}</h3><strong>{coach.grade}</strong><span>{coach.focus}</span><p className="coach-bio">{coach.bio}</p></div></article>)}</div><figure className="coaches-action"><img src={asset('/training/no-gi-open-guard.jpg')} alt="No-Gi students working through an open guard position" loading="lazy" /><figcaption>Coaching that holds up when the pace rises.</figcaption></figure></div></section>
+      <section className="coaches-section" id="coaches"><div className="shell"><div className="section-heading light"><div><p className="eyebrow"><span /> Coaching team</p><h2>Different styles.<br /><em>One standard.</em></h2></div><p>Deep experience across BJJ, Judo and modern No-Gi grappling gives every student a rounded, pressure-tested education.</p></div><div className="coach-grid">{coaches.map((coach, index) => <article className="coach-card" key={coach.name}><figure><img src={asset(coach.image)} alt={`${coach.name}, ${coach.grade}`} loading={index < 2 ? 'eager' : 'lazy'} /></figure><div className="coach-number">0{index + 1}</div><div className="coach-copy"><p>{coach.role}</p><h3>{coach.name}</h3><strong>{coach.grade}</strong><span>{coach.focus}</span><p className="coach-bio">{coach.bio}</p><details className="coach-profile"><summary>Read full profile <span>+</span></summary><div>{coach.profile.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div></details></div></article>)}</div><figure className="coaches-action"><img src={asset('/training/no-gi-open-guard.jpg')} alt="No-Gi students working through an open guard position" loading="lazy" /><figcaption>Coaching that holds up when the pace rises.</figcaption></figure></div></section>
 
       <section className="section approach-section" id="approach"><div className="shell approach-grid"><div className="approach-copy"><p className="eyebrow dark"><span /> The Origin approach</p><h2>Problem-solving<br />under pressure.</h2><p className="approach-lead">We do not train to collect techniques. We train to understand position, movement, timing and decision-making—and to apply them when someone is trying to stop us.</p><div className="association"><ShieldCheck size={26} /><div><span>Proudly under</span><strong>The Nick Brooks Association</strong><p>A respected lineage, coaching network and technical foundation connecting Origin to the wider UK BJJ community.</p></div></div></div><div className="principles">{principles.map(([number, title, text]) => <div key={number}><span>{number}</span><h3>{title}</h3><p>{text}</p></div>)}</div></div></section>
 
@@ -110,10 +142,10 @@ export default function Home() {
 
       <section className="location-section" id="location"><div className="shell location-grid"><div className="location-visual"><iframe title="Map showing Origin MK BJJ at Unit 8 Potters Lane, Kiln Farm" src="https://www.google.com/maps?q=Unit+8,+Potters+Lane,+Kiln+Farm,+Milton+Keynes+MK11+3HE&z=15&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade" /></div><div className="location-copy"><p className="eyebrow dark"><span /> Our new home</p><h2>Origin starts here.</h2><p className="address">Unit 8, Potters Lane<br />Kiln Farm<br />Milton Keynes MK11 3HE</p><p>Doors open Monday 5 October 2026. Allow a little extra time on your first visit to find the unit and get settled before class.</p><a className="button button-dark" href="https://www.google.com/maps/search/?api=1&query=Unit+8+Potters+Lane+Kiln+Farm+Milton+Keynes+MK11+3HE" target="_blank" rel="noreferrer">Open in Google Maps <ArrowUpRight size={18} /></a></div></div></section>
 
-      <section className="contact-section" id="contact"><div className="shell contact-grid"><div><p className="eyebrow"><span /> Get in touch</p><h2>Questions before<br />your first class?</h2></div><div className="contact-copy"><p>Ask us about classes, getting started or visiting the new academy. We’ll point you in the right direction.</p><a className="contact-email" href="mailto:originmkbjj@gmail.com"><Mail size={22} /><span><small>Email Origin MK BJJ</small><strong>originmkbjj@gmail.com</strong></span><ArrowUpRight size={21} /></a></div></div></section>
+      <section className="contact-section" id="contact"><div className="shell contact-grid"><div className="contact-intro"><p className="eyebrow"><span /> Contact Origin</p><h2>Questions before<br />your first class?</h2></div><div className="contact-copy"><p>Ask us about classes, getting started or visiting the new academy. We’ll get back to you as soon as we can.</p><a className="contact-email" href="mailto:originmkbjj@gmail.com"><Mail size={22} /><span><small>Email Origin MK BJJ</small><strong>originmkbjj@gmail.com</strong></span><ArrowUpRight size={20} /></a></div></div></section>
     </div>
 
     <footer><div className="shell footer-main"><a className="brand" href="#top"><img className="brand-logo" src={asset('/brand/origin-logo.jpg')} alt="Origin Brazilian Jiu-Jitsu Academy MK" loading="lazy" /></a><p>Strong fundamentals. Technical precision.<br />Progressive development. Pressure-tested Jiu-Jitsu.</p><div><a href="#timetable">Timetable</a><a href="#coaches">Coaches</a><a href="#location">Find us</a><a href="#contact">Contact</a></div></div><div className="shell footer-bottom"><span>© 2026 Origin MK BJJ</span><span>Proudly under The Nick Brooks Association</span><a href="#top">Back to top ↑</a></div></footer>
-    <div className="mobile-bar"><a href="#timetable"><CalendarDays size={18} /> Timetable</a><a href="#location"><MapPin size={18} /> Find us</a></div>
+    <div className="mobile-bar"><a href="#timetable"><CalendarDays size={18} /> Classes</a><a href="https://maat-app.link/Gxij8SlZe6b" target="_blank" rel="noreferrer"><ArrowUpRight size={18} /> Join</a><a href="#contact"><Mail size={18} /> Contact</a></div>
   </main>;
 }
