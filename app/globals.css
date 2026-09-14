@@ -161,9 +161,11 @@ h1 em,h2 em { color:var(--gold); font-weight:400; }
 .contact-form label { display:grid; gap:6px; min-width:0; }
 .contact-form label > span { font-size:.65rem; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
 .contact-form input,.contact-form textarea { width:100%; border:1px solid rgba(255,255,255,.24); border-radius:0; outline:0; background:#171717; color:white; font:inherit; }
+.contact-form select { width:100%; min-height:46px; padding:0 36px 0 13px; border:1px solid rgba(255,255,255,.24); border-radius:0; outline:0; background:#171717; color:white; font:inherit; }
 .contact-form input { min-height:46px; padding:0 13px; }
 .contact-form textarea { min-height:96px; padding:11px 13px; resize:vertical; }
 .contact-form input:focus,.contact-form textarea:focus { border-color:var(--gold-bright); box-shadow:0 0 0 1px var(--gold-bright); }
+.contact-form select:focus { border-color:var(--gold-bright); box-shadow:0 0 0 1px var(--gold-bright); }
 .contact-form button { min-height:48px; display:inline-flex; align-items:center; justify-content:center; gap:8px; border:0; background:var(--gold); color:var(--black); font-size:.76rem; font-weight:900; cursor:pointer; }
 .contact-form button:hover { background:var(--gold-bright); }
 .contact-email { display:flex; align-items:center; gap:16px; width:max-content; max-width:100%; padding:15px 0; border-bottom:1px solid rgba(0,0,0,.38); transition:border-color .2s ease; }
@@ -394,4 +396,145 @@ footer { padding:65px 0 28px; background:#050505; color:white; }.footer-main { d
   .brand-logo{width:118px;height:54px}
   .timetable-masthead img{width:110px;height:50px}
   .contact-email strong{font-size:.95rem}
+}
+
+/* Responsive content redesign */
+.ticker-mobile,.timetable-tabs,.mobile-day-panel{display:none}
+.closed-copy{margin:30px 0 0;color:rgba(255,255,255,.48);font:italic 1rem Georgia,serif}
+.timetable-masthead{min-height:145px;padding:22px 30px}
+.timetable-masthead h3{font-size:clamp(2.5rem,4vw,3.7rem)}
+.timetable-masthead img{width:220px;height:96px}
+.schedule-days{grid-template-columns:repeat(7,minmax(0,1fr));gap:7px;padding:12px}
+.day-card{min-height:255px;padding:11px}
+.day-card header{padding-bottom:9px}
+.day-card header span{font-size:.64rem}.day-card h3{font-size:1.24rem}
+.day-sessions{gap:7px;padding-top:9px}
+.session-card{padding:8px}
+.session-card time{font-size:.64rem}.session-card strong{font-size:.86rem}.session-card span{font-size:.61rem}
+.maat-band{align-items:stretch;padding:30px 32px;background:linear-gradient(125deg,#090909,#172326);border-top:3px solid var(--gold)}
+.maat-explainer{display:flex;align-items:flex-start!important;gap:26px!important}
+.maat-kicker{margin:0 0 5px!important;color:var(--gold)!important;font-size:.62rem!important;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.maat-band h3{font-size:1.65rem;line-height:1.12}
+.maat-band p{margin-top:8px;max-width:690px;font-size:.86rem;line-height:1.55}
+.maat-band ul{display:flex;flex-wrap:wrap;gap:8px 18px;margin:15px 0 0;padding:0;list-style:none}
+.maat-band li{color:rgba(255,255,255,.78);font-size:.7rem;font-weight:800}
+.maat-band li::before{content:'✓';margin-right:6px;color:var(--gold)}
+.maat-status{align-self:center;padding:13px 16px}
+
+.coaches-section{min-height:100svh;padding:38px 0;background:#101010}
+.coaches-section .section-heading{margin-bottom:28px}
+.coach-showcase{border:1px solid rgba(255,255,255,.14);background:#080808}
+.coach-stage{position:relative;display:grid;grid-template-columns:.92fr 1.08fr;height:390px;overflow:hidden;animation:coach-in .35s ease both}
+.coach-stage figure{height:100%;margin:0;overflow:hidden;background:#191919}
+.coach-stage figure::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 66%,rgba(8,8,8,.55))}
+.coach-stage img{height:100%;object-fit:cover;object-position:center 24%;filter:grayscale(1) contrast(1.05)}
+.coach-panel{min-width:0;padding:28px 36px;overflow:auto;scrollbar-width:thin;scrollbar-color:var(--gold) #171717}
+.coach-panel-top{display:flex;justify-content:space-between;gap:20px;color:var(--gold);font-size:.66rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.coach-panel-top p{margin:0}.coach-panel-top span{color:rgba(255,255,255,.45)}
+.coach-panel h3{margin:7px 0 3px;font:400 clamp(2.5rem,4vw,4.1rem)/.95 Georgia,serif;letter-spacing:-.05em}
+.coach-panel>strong{display:block;max-width:650px;font-size:.82rem;line-height:1.45}
+.coach-focus{margin-top:12px;color:rgba(255,255,255,.46);font-size:.7rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.coach-panel .coach-bio{margin:18px 0;color:rgba(255,255,255,.76);font-size:.92rem;line-height:1.55}
+.coach-full-profile{padding-top:15px;border-top:1px solid rgba(217,184,92,.3)}
+.coach-full-profile>span{color:var(--gold);font-size:.65rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.coach-full-profile p{margin:10px 0;color:rgba(255,255,255,.64);font-size:.83rem;line-height:1.55}
+.coach-arrows{position:absolute;left:22px;bottom:22px;display:flex;gap:7px}
+.coach-arrows button{width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.4);background:rgba(0,0,0,.72);color:white;cursor:pointer}
+.coach-arrows button:hover{background:var(--gold);color:var(--black)}
+.coach-selector{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.14)}
+.coach-selector button{min-height:58px;padding:0 16px;border:0;border-right:1px solid rgba(255,255,255,.12);background:#111;color:rgba(255,255,255,.55);font-size:.74rem;font-weight:900;text-align:left;cursor:pointer}
+.coach-selector button:last-child{border-right:0}.coach-selector button span{margin-right:9px;color:var(--gold);font:italic .72rem Georgia,serif}.coach-selector button.active{background:var(--gold);color:var(--black)}.coach-selector button.active span{color:var(--black)}
+@keyframes coach-in{from{opacity:.5}to{opacity:1}}
+
+.approach-section{padding:40px 0;background:#e7e3da}
+.approach-stage{display:grid;grid-template-columns:1.05fr .95fr;height:620px;min-height:0;background:var(--black);box-shadow:0 30px 75px rgba(0,0,0,.18)}
+.approach-visual{position:relative;min-height:0;overflow:hidden;color:white}
+.approach-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.84))}
+.approach-visual>img{height:100%;object-fit:cover;object-position:center 28%;filter:grayscale(1) contrast(1.08)}
+.approach-copy{position:absolute;z-index:2;left:42px;right:36px;bottom:38px}
+.approach-copy h2{margin:0;font-size:clamp(3.1rem,5vw,5rem);line-height:.9}
+.approach-lead{max-width:590px;margin:18px 0 0;color:rgba(255,255,255,.76);font-size:1rem;line-height:1.55}
+.approach-detail{display:flex;flex-direction:column;padding:32px;background:var(--paper)}
+.approach-statement{margin:0 0 25px;font:400 1.42rem/1.45 Georgia,serif;letter-spacing:-.02em}
+.approach-detail .principles{display:grid;grid-template-columns:1fr 1fr;border:0;gap:1px;background:rgba(17,17,17,.15)}
+.approach-detail .principles>div{display:block;padding:14px;background:var(--paper);border:0}
+.approach-detail .principles h3{font-size:1.15rem}.approach-detail .principles p{font-size:.78rem;line-height:1.45}
+.approach-detail .association{margin-top:auto;padding:14px;background:white}
+
+@media(max-width:620px){
+  .hero{height:auto;min-height:0;padding:100px 0 26px}
+  .hero-grid{height:auto;min-height:0}
+  .hero-copy{padding:18px 0 0}
+  .hero h1{font-size:clamp(2.85rem,14vw,3.35rem)}
+  .hero-lead{margin:12px 0;font-size:.86rem;line-height:1.43}
+  .hero-actions{margin-top:14px}
+  .hero-visual{display:none}
+  .hero-proof{position:static;margin-top:22px;padding:12px 0 0;background:transparent;border-top:1px solid rgba(255,255,255,.18)}
+  .hero-proof span{display:block}
+  .hero-ticker{height:48px;padding:0 12px}
+  .ticker-desktop{display:none!important}
+  .ticker-mobile{width:100%;display:grid!important;grid-template-columns:.65fr .9fr 1.35fr 1.1fr;align-items:center;gap:0;transform:none!important;word-spacing:0!important}
+  .ticker-mobile span{min-width:0;padding:0 4px;text-align:center;font-size:.56rem;letter-spacing:.03em;white-space:nowrap}
+  .ticker-mobile span+span{border-left:1px solid rgba(9,9,9,.3)}
+
+  .schedule-section{padding:38px 0}
+  .schedule-section .section-heading{gap:8px;margin-bottom:16px}
+  .schedule-section .section-heading h2{font-size:2.35rem}
+  .schedule-section .section-intro{display:none}
+  .timetable-masthead{min-height:0;padding:16px 18px}
+  .timetable-masthead h3{font-size:1.9rem}
+  .timetable-masthead p{margin-top:5px;font-size:.56rem}
+  .timetable-masthead img{width:96px;height:44px}
+  .schedule-days{display:none}
+  .timetable-tabs{display:grid;grid-template-columns:repeat(7,1fr);border-bottom:1px solid rgba(217,184,92,.28)}
+  .timetable-tabs button{min-width:0;padding:9px 2px;border:0;border-right:1px solid rgba(255,255,255,.08);background:#101010;color:rgba(255,255,255,.52);cursor:pointer}
+  .timetable-tabs button span,.timetable-tabs button small{display:block}.timetable-tabs button span{font-size:.59rem;font-weight:900;text-transform:uppercase}.timetable-tabs button small{margin-top:2px;color:var(--gold);font-size:.58rem}
+  .timetable-tabs button[aria-selected='true']{background:var(--gold);color:var(--black)}.timetable-tabs button[aria-selected='true'] small{color:var(--black)}
+  .mobile-day-panel{display:block;min-height:190px;padding:16px 18px}
+  .mobile-day-panel header{display:flex;align-items:baseline;gap:9px;padding-bottom:9px;border-bottom:1px solid rgba(217,184,92,.28)}
+  .mobile-day-panel header span{color:var(--gold);font:italic .72rem Georgia,serif}.mobile-day-panel h3{margin:0;font:400 1.55rem Georgia,serif}
+  .mobile-day-panel .day-sessions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding-top:10px}
+  .mobile-day-panel .session-card{padding:10px;min-height:84px}.mobile-day-panel .session-card strong{font-size:.9rem}.mobile-day-panel .session-card span{font-size:.65rem}
+  .timetable-footer{padding:11px 16px;font-size:.58rem}
+  .maat-band{margin-top:16px;padding:16px 18px;flex-direction:column;gap:13px}
+  .maat-explainer{display:grid!important;grid-template-columns:52px 1fr;gap:10px!important}.maat-label{align-self:start;padding:6px 4px;border:1px solid rgba(217,184,92,.72);font:900 .62rem/1 Arial,sans-serif;letter-spacing:.08em;text-align:center}.maat-kicker{display:none}.maat-band h3{font-size:1.05rem}.maat-band p{margin-top:6px;font-size:.72rem;line-height:1.4}.maat-status{width:100%;min-height:40px;justify-content:center}
+  .maat-band ul{display:none}
+
+  .coaches-section{min-height:0;padding:52px 0}
+  .coaches-section .section-heading{margin-bottom:20px}.coaches-section .section-heading>p{font-size:.86rem}
+  .coach-stage{grid-template-columns:38% 62%;height:520px}
+  .coach-stage figure::after{background:linear-gradient(90deg,transparent 65%,rgba(8,8,8,.5))}
+  .coach-stage img{object-position:center 22%}
+  .coach-panel{padding:19px 14px 20px}
+  .coach-panel-top{font-size:.56rem}.coach-panel h3{font-size:1.75rem}.coach-panel>strong{font-size:.67rem;line-height:1.35}.coach-focus{font-size:.56rem;line-height:1.45}
+  .coach-panel .coach-bio{margin:12px 0;font-size:.74rem;line-height:1.45}.coach-full-profile{padding-top:11px}.coach-full-profile>span{font-size:.56rem}.coach-full-profile p{font-size:.7rem;line-height:1.45}
+  .coach-arrows{left:9px;bottom:9px}.coach-arrows button{width:37px;height:37px}
+  .coach-selector button{min-height:52px;padding:6px 2px;font-size:.58rem;text-align:center}.coach-selector button span{display:block;margin:0 0 2px}
+
+  .approach-section{padding:40px 0}
+  .approach-stage{grid-template-columns:1fr;height:auto;min-height:0}
+  .approach-visual{min-height:240px}.approach-copy{left:18px;right:16px;bottom:16px}.approach-copy h2{font-size:2.35rem}.approach-lead{margin-top:8px;font-size:.74rem;line-height:1.4}
+  .approach-detail{padding:18px}.approach-statement{margin-bottom:13px;font-size:1rem;line-height:1.35}.approach-detail .principles>div{padding:9px}.approach-detail .principles h3{font-size:.84rem}.approach-detail .principles p{font-size:.62rem}.approach-detail .association{margin-top:13px;padding:11px}.approach-detail .association strong{font-size:1rem}.approach-detail .association p{display:none}
+
+  .beginner-section{min-height:0;padding:42px 0}
+  .beginner-section::after{display:none}
+  .beginner-grid{display:block}
+  .beginner-grid h2{font-size:2.75rem}
+  .beginner-photo{position:relative;inset:auto;width:100%;height:190px;margin:24px 0;opacity:1}
+  .beginner-grid>div:last-child{max-width:none;margin-top:0}
+  .beginner-grid>div:last-child>p{font-size:.86rem;line-height:1.5}
+
+  .contact-section{padding:36px 0}
+  .contact-section h2{font-size:2.55rem}
+  .contact-grid{gap:19px}
+  .contact-copy>p{margin-bottom:12px;font-size:.85rem}
+  .contact-form{gap:10px;padding:14px}
+  .form-row{grid-template-columns:1fr 1fr;gap:9px}
+  .contact-form label>span{font-size:.57rem}.contact-form input,.contact-form select{min-height:40px;padding-left:10px;font-size:.8rem}.contact-form textarea{min-height:68px;font-size:.8rem}.contact-form button{min-height:42px}
+  .contact-email{padding:10px 0}.contact-email strong{font-size:.95rem}
+}
+
+@media(min-width:621px) and (max-width:900px){
+  .schedule-days{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .day-card{min-height:0}
 }

@@ -1,11 +1,13 @@
 import { ArrowDownRight, ArrowUpRight, CalendarDays, Clock3, Mail, ShieldCheck, Sparkles, Users } from 'lucide-react';
+import CoachShowcase from './CoachShowcase';
+import Timetable from './Timetable';
 /* oxlint-disable next/no-img-element -- GitHub Pages uses static, supplied coach images; next/image triggers a vinext hydration issue. */
 
 export const dynamic = 'force-static';
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 const asset = (path: string) => `${basePath}${path}`;
 
-const schedule = [
+const schedule: { day: string; sessions: [string, string, string][] }[] = [
   { day: 'Monday', sessions: [['12:00–1:30pm', 'Gi / No-Gi lunchtime', 'Steve · 1 hour coached + open mat'], ['6:30–8:00pm', 'Open mat', 'Gi & No-Gi']] },
   { day: 'Tuesday', sessions: [['5:30–6:30pm', 'Beginners', 'No-Gi · Pete'], ['6:30–8:00pm', 'Main class', 'Alternating Gi / No-Gi · Pete']] },
   { day: 'Wednesday', sessions: [['12:00–1:30pm', 'Gi / No-Gi lunchtime', 'Steve · 1 hour coached + open mat'], ['6:00–8:00pm', 'JitzJudo', 'Gi · Alan']] },
@@ -53,7 +55,7 @@ const coaches = [
   },
 ];
 
-const principles = [['01', 'Position before submission', 'Control creates opportunity.'], ['02', 'Technique before force', 'Efficiency beats unnecessary strength.'], ['03', 'Intelligence before chaos', 'Understand the problem before you solve it.'], ['04', 'Pressure creates reaction', 'Make them respond—then use the opening.']];
+const principles = [['Position before submission', 'Control creates opportunity.'], ['Technique before force', 'Efficiency beats unnecessary strength.'], ['Intelligence before chaos', 'Understand the problem before you solve it.'], ['Pressure creates reaction', 'Make them respond—then use the opening.']];
 
 const trainingImages = [
   { src: '/training/no-gi-throw.jpg', alt: 'No-Gi students practising a takedown' },
@@ -87,7 +89,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="hero-ticker" aria-hidden="true"><div>GI <span>✦</span> NO-GI <span>✦</span> JITZJUDO <span>✦</span> OPEN MAT <span>✦</span> BEGINNERS <span>✦</span> GI <span>✦</span> NO-GI</div></div>
+      <div className="hero-ticker" aria-hidden="true"><div className="ticker-desktop">GI <span>✦</span> NO-GI <span>✦</span> JITZJUDO <span>✦</span> OPEN MAT <span>✦</span> BEGINNERS <span>✦</span> GI <span>✦</span> NO-GI</div><div className="ticker-mobile"><span>GI</span><span>NO-GI</span><span>JITZJUDO</span><span>OPEN MAT</span></div></div>
 
       <section className="training-section" id="training">
         <div className="shell training-layout">
@@ -115,28 +117,14 @@ export default function Home() {
             <div><p className="eyebrow dark"><span /> Weekly timetable</p><h2>More mat time.<br /><em>More ways to train.</em></h2></div>
             <div className="section-intro"><p>Morning person? Lunch-break grappler? Evening regular? Choose the sessions that fit your week. Gi and No-Gi alternate where shown.</p><span><Clock3 size={17} /> Timetable starts Monday 5 October 2026</span></div>
           </div>
-          <div className="timetable-board">
-            <div className="timetable-masthead">
-              <div><span>Origin MK BJJ</span><h3>Weekly timetable</h3><p>Gi · No-Gi · JitzJudo · Open Mat</p></div>
-              <img src={asset('/brand/origin-logo.jpg')} alt="" aria-hidden="true" />
-            </div>
-            <div className="schedule-days">
-              {schedule.map(({ day, sessions }, dayIndex) => <article className="day-card" key={day}>
-                <header><span>0{dayIndex + 1}</span><h3>{day}</h3></header>
-                <div className="day-sessions">{sessions.map(([time, title, detail]) => <div className="session-card" key={`${day}-${time}`}><time>{time}</time><strong>{title}</strong><span>{detail}</span></div>)}</div>
-              </article>)}
-              <article className="day-card day-card-closed"><header><span>07</span><h3>Sunday</h3></header><p>Closed—for now.</p></article>
-            </div>
-            <div className="timetable-footer"><span>Unit 8 · Potters Lane · Kiln Farm</span><strong>Milton Keynes · MK11 3HE</strong></div>
-          </div>
-          <div className="maat-band"><div><span className="maat-label">MAAT</span><div><h3>Your training, all in one place.</h3><p>Join the academy, manage class bookings, view club announcements and follow your progress through the MAAT app.</p></div></div><a className="maat-status" href="https://maat-app.link/Gxij8SlZe6b" target="_blank" rel="noreferrer">Join Origin on MAAT <ArrowUpRight size={15} /></a></div>
-          <div className="schedule-photos"><figure><img src={asset('/training/no-gi-wrestling.jpg')} alt="Students drilling No-Gi wrestling" loading="lazy" /></figure><figure><img src={asset('/training/coach-observing.jpg')} alt="A coach watching students train" loading="lazy" /></figure><p><strong>Drill. Test. Refine.</strong><span>Every class combines clear coaching with time to put the work into practice.</span></p></div>
+          <Timetable schedule={schedule} logoSrc={asset('/brand/origin-logo.jpg')} />
+          <div className="maat-band"><div className="maat-explainer"><span className="maat-label">MAAT</span><div><p className="maat-kicker">The academy app</p><h3>Book classes. Get club updates. Track your training.</h3><p>MAAT is the app Origin uses for membership and day-to-day training. Open the link, join the Origin MK BJJ gym, then use it to manage your sessions in one place.</p><ul><li>Join the academy</li><li>Book classes</li><li>See announcements</li><li>Track attendance</li></ul></div></div><a className="maat-status" href="https://maat-app.link/Gxij8SlZe6b" target="_blank" rel="noreferrer">Open MAAT and join <ArrowUpRight size={15} /></a></div>
         </div>
       </section>
 
-      <section className="coaches-section" id="coaches"><div className="shell"><div className="section-heading light"><div><p className="eyebrow"><span /> Coaching team</p><h2>Different styles.<br /><em>One standard.</em></h2></div><p>Deep experience across BJJ, Judo and modern No-Gi grappling gives every student a rounded, pressure-tested education.</p></div><div className="coach-grid">{coaches.map((coach, index) => <article className="coach-card" key={coach.name}><figure><img src={asset(coach.image)} alt={`${coach.name}, ${coach.grade}`} loading={index < 2 ? 'eager' : 'lazy'} /></figure><div className="coach-number">0{index + 1}</div><div className="coach-copy"><p>{coach.role}</p><h3>{coach.name}</h3><strong>{coach.grade}</strong><span>{coach.focus}</span><p className="coach-bio">{coach.bio}</p><details className="coach-profile"><summary>Read full profile <span>+</span></summary><div>{coach.profile.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div></details></div></article>)}</div><figure className="coaches-action"><img src={asset('/training/no-gi-open-guard.jpg')} alt="No-Gi students working through an open guard position" loading="lazy" /><figcaption>Coaching that holds up when the pace rises.</figcaption></figure></div></section>
+      <section className="coaches-section" id="coaches"><div className="shell"><div className="section-heading light"><div><p className="eyebrow"><span /> Four coaches · one team</p><h2>Different styles.<br /><em>One standard.</em></h2></div><p>Select a coach to explore the experience behind Origin’s Gi, No-Gi and JitzJudo programme.</p></div><CoachShowcase coaches={coaches} basePath={basePath} /></div></section>
 
-      <section className="section approach-section" id="approach"><div className="shell approach-grid"><div className="approach-copy"><p className="eyebrow dark"><span /> The Origin approach</p><h2>Problem-solving<br />under pressure.</h2><p className="approach-lead">We do not train to collect techniques. We train to understand position, movement, timing and decision-making—and to apply them when someone is trying to stop us.</p><div className="association"><ShieldCheck size={26} /><div><span>Proudly under</span><strong>The Nick Brooks Association</strong><p>A respected lineage, coaching network and technical foundation connecting Origin to the wider UK BJJ community.</p></div></div></div><div className="principles">{principles.map(([number, title, text]) => <div key={number}><span>{number}</span><h3>{title}</h3><p>{text}</p></div>)}</div></div></section>
+      <section className="approach-section" id="approach"><div className="shell approach-stage"><div className="approach-visual"><img src={asset('/training/no-gi-open-guard.jpg')} alt="No-Gi students solving an open guard position" loading="lazy" /><div className="approach-copy"><p className="eyebrow"><span /> The Origin approach</p><h2>Problem-solving<br />under pressure.</h2><p className="approach-lead">We teach the decisions behind the technique—so it still works when someone is resisting.</p></div></div><div className="approach-detail"><p className="approach-statement">Position, movement, timing and pressure are taught as one connected system—not a collection of isolated moves.</p><div className="principles">{principles.map(([title, text]) => <div key={title}><h3>{title}</h3><p>{text}</p></div>)}</div><div className="association"><ShieldCheck size={26} /><div><span>Proudly under</span><strong>The Nick Brooks Association</strong><p>A respected lineage and technical foundation connecting Origin to the wider UK BJJ community.</p></div></div></div></div></section>
 
       <section className="beginner-section" id="first-class"><div className="shell beginner-grid"><div><p className="eyebrow"><span /> Your first class</p><h2><span>You don’t need to</span><span>be fit before</span><span>you begin.</span></h2></div><figure className="beginner-photo"><img src={asset('/training/gi-partners.jpg')} alt="Two training partners practising Gi Jiu-Jitsu" loading="lazy" /></figure><div><p>No previous experience. No need to already know the rules. Turn up willing to learn and our coaches will help you build confidence one session at a time.</p><ul><li><Users size={19} /> Beginner sessions Tuesday and Friday</li><li><ShieldCheck size={19} /> Controlled, respectful training</li><li><Sparkles size={19} /> Progress at your own pace</li></ul><a className="button button-gold" href="#location">Plan your first visit <ArrowDownRight size={18} /></a></div></div></section>
 
@@ -153,6 +141,10 @@ export default function Home() {
               <div className="form-row">
                 <label><span>Name</span><input type="text" name="name" autoComplete="name" required /></label>
                 <label><span>Email</span><input type="email" name="email" autoComplete="email" required /></label>
+              </div>
+              <div className="form-row">
+                <label><span>Phone</span><input type="tel" name="phone" autoComplete="tel" /></label>
+                <label><span>Enquiry about</span><select name="enquiry" defaultValue=""><option value="" disabled>Choose one</option><option>First class</option><option>Timetable</option><option>Membership</option><option>Kids classes</option><option>Something else</option></select></label>
               </div>
               <label><span>How can we help?</span><textarea name="message" rows={4} required /></label>
               <button type="submit">Send enquiry <ArrowUpRight size={18} /></button>
