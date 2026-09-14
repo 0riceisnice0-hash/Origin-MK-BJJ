@@ -1,6 +1,5 @@
 'use client';
 
-import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 
 type Coach = {
@@ -14,25 +13,34 @@ type Coach = {
 };
 
 export default function CoachShowcase({ coaches, basePath }: { coaches: Coach[]; basePath: string }) {
-  const [active, setActive] = useState(0);
-  const coach = coaches[active];
-  const move = (direction: number) => setActive(current => (current + direction + coaches.length) % coaches.length);
+  const [active, setActive] = useState<number | null>(null);
+  const selected = active === null ? null : coaches[active];
 
   return <div className="coach-showcase">
-    <div className="coach-stage" key={coach.name}>
-      <figure><img src={`${basePath}${coach.image}`} alt={`${coach.name}, ${coach.grade}`} /></figure>
-      <article className="coach-panel">
-        <div className="coach-panel-top"><p>{coach.role}</p><span>{String(active + 1).padStart(2, '0')} / {String(coaches.length).padStart(2, '0')}</span></div>
-        <h3>{coach.name}</h3>
-        <strong>{coach.grade}</strong>
-        <div className="coach-focus">{coach.focus}</div>
-        <p className="coach-bio">{coach.bio}</p>
-        <div className="coach-full-profile"><span>Coach profile</span>{coach.profile.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div>
-      </article>
-      <div className="coach-arrows"><button type="button" onClick={() => move(-1)} aria-label="Previous coach"><ArrowLeft size={18} /></button><button type="button" onClick={() => move(1)} aria-label="Next coach"><ArrowRight size={18} /></button></div>
+    <div className="coach-roster">
+      {coaches.map((coach, index) => <article className="coach-tile" key={coach.name}>
+        <figure>
+          <img src={`${basePath}${coach.image}`} alt={`${coach.name}, ${coach.grade}`} />
+          <figcaption>{coach.role}</figcaption>
+        </figure>
+        <div className="coach-tile-copy">
+          <p className="coach-count">{String(index + 1).padStart(2, '0')} / {String(coaches.length).padStart(2, '0')}</p>
+          <h3>{coach.name}</h3>
+          <strong>{coach.grade}</strong>
+          <p>{coach.bio}</p>
+          <button type="button" aria-expanded={active === index} onClick={() => setActive(active === index ? null : index)}>
+            {active === index ? 'Close profile' : 'Read full profile'} <span aria-hidden="true">{active === index ? '−' : '+'}</span>
+          </button>
+        </div>
+      </article>)}
     </div>
-    <div className="coach-selector" role="tablist" aria-label="Choose a coach">
-      {coaches.map((item, index) => <button type="button" role="tab" aria-selected={active === index} className={active === index ? 'active' : ''} onClick={() => setActive(index)} key={item.name}><span>{String(index + 1).padStart(2, '0')}</span>{item.name}</button>)}
-    </div>
+
+    {selected && <article className="coach-profile" aria-live="polite">
+      <div className="coach-profile-heading">
+        <div><p>{selected.role} · {selected.focus}</p><h3>{selected.name}</h3><strong>{selected.grade}</strong></div>
+        <button type="button" onClick={() => setActive(null)} aria-label={`Close ${selected.name} profile`}>×</button>
+      </div>
+      <div className="coach-profile-copy">{selected.profile.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div>
+    </article>}
   </div>;
 }
