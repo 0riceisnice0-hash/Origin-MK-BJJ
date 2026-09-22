@@ -25,15 +25,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-        env:
-          GITHUB_PAGES: 'true'
-          NEXT_PUBLIC_BASE_PATH: /Origin-MK-BJJ
       - name: Prepare GitHub Pages files
         run: |
           mkdir pages-dist
           cp -a dist/client/. pages-dist/
-          mv pages-dist/Origin-MK-BJJ/_next pages-dist/_next
-          rmdir pages-dist/Origin-MK-BJJ
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./pages-dist
