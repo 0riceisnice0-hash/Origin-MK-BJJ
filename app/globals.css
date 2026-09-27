@@ -559,3 +559,25 @@ footer { padding:65px 0 28px; background:#050505; color:white; }.footer-main { d
 @media(max-width:1100px){.nav-wrap nav{gap:10px}.nav-wrap nav a{font-size:.67rem}.programme-nav nav{gap:10px}.programme-nav nav a{font-size:.68rem}}
 @media(max-width:900px){.programme-nav nav{display:none}.programme-nav>.button{margin-left:auto}.programme-hero-grid{gap:25px}.programme-body-grid{gap:45px}}
 @media(max-width:620px){.brand-logo{object-fit:contain}.hero-mobile-photo{display:block;height:180px;margin:22px 0 0;overflow:hidden}.hero-mobile-photo img{height:100%;object-fit:cover;object-position:center 52%}.team-photo{height:170px}.team-photo figcaption{left:15px;bottom:12px;font-size:1.2rem}.coach-roster{grid-template-columns:repeat(2,minmax(0,1fr))}.programme-grid{grid-template-columns:repeat(2,1fr)}.programme-grid a{min-height:130px;padding:15px}.programme-grid strong{font-size:1.15rem}.programme-grid span{font-size:.66rem}.programme-links{padding:48px 0}.home-inclusion{padding:36px 0}.home-inclusion .shell{grid-template-columns:1fr;gap:10px}.home-inclusion p:last-child{font-size:.85rem}.programme-page{padding-bottom:0}.programme-nav{min-height:72px}.programme-nav>a:first-child{width:120px}.programme-nav img{height:60px}.programme-nav>.button{min-height:39px;padding:0 11px;font-size:.7rem}.programme-hero-grid{display:flex;flex-direction:column-reverse;gap:0}.programme-hero figure{width:calc(100% + 28px);height:220px;margin:0 -14px}.programme-hero-grid>div{padding:32px 0 42px}.programme-hero h1{font-size:2.7rem}.programme-lead{margin:15px 0;font-size:.95rem}.programme-actions{align-items:flex-start;flex-direction:column;gap:14px}.programme-body,.programme-practical,.programme-faq,.programme-next{padding:47px 0}.programme-body-grid,.programme-practical-grid{grid-template-columns:1fr;gap:28px}.programme-body h2,.programme-practical h2,.programme-faq h2,.programme-next h2,.programme-contact h2{font-size:2.5rem}.programme-visit{padding:22px}.programme-inclusion .shell{grid-template-columns:1fr;gap:10px}.programme-inclusion h2{font-size:1.6rem}.programme-inclusion p{font-size:.85rem}.programme-next>div>div{grid-template-columns:1fr}.programme-next a{min-height:65px}.programme-contact{padding:44px 0}.programme-contact .shell{align-items:flex-start;flex-direction:column}.programme-contact .button{white-space:normal}.programme-footer .shell{flex-direction:column;gap:5px}}
+
+/* Shared enquiry form */
+.contact-form .form-honeypot{display:none!important}
+.contact-form .form-privacy{margin:0;color:rgba(255,255,255,.7);font-size:.69rem;line-height:1.5}
+.contact-form .form-privacy a{text-decoration:underline;text-underline-offset:2px}
+.contact-form label small{font-size:.6rem;font-weight:400;letter-spacing:0;text-transform:none}
+.programme-contact .shell{display:grid;grid-template-columns:.85fr 1.15fr;align-items:start;gap:70px}
+.programme-contact .contact-form{width:100%}
+.programme-contact-email{display:flex;align-items:center;gap:7px;margin-top:26px!important;font-size:.82rem}
+.programme-contact-email a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:620px){.programme-contact .shell{grid-template-columns:1fr;gap:22px}.contact-form .form-row{grid-template-columns:1fr;gap:10px}.contact-form{padding:18px}.contact-form .form-privacy{font-size:.68rem}}
+
+/* Keep the supplied action photography in colour and at a useful aspect ratio. */
+.approach-visual>img{filter:none}
+.team-photo{display:grid;grid-template-columns:1.25fr .75fr;height:500px;min-height:0;margin-bottom:22px;background:#080808}
+.team-photo::after{display:none}
+.team-photo img{width:100%;height:100%;object-fit:cover;object-position:center center}
+.team-photo figcaption{position:static;display:flex;flex-direction:column;justify-content:end;gap:12px;padding:38px;background:linear-gradient(135deg,#181818,#0b0b0b);color:white}
+.team-photo figcaption span{color:var(--gold);font-size:.68rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
+.team-photo figcaption strong{font:400 clamp(2rem,3.4vw,3.3rem)/1.05 Georgia,serif;letter-spacing:-.04em}
+.team-photo figcaption p{max-width:280px;margin:0;color:rgba(255,255,255,.57);font-size:.84rem;line-height:1.5}
+@media(max-width:620px){.team-photo{grid-template-columns:1fr;height:auto}.team-photo img{height:auto;aspect-ratio:1.3;object-fit:cover}.team-photo figcaption{padding:22px}.team-photo figcaption strong{font-size:1.8rem}.team-photo figcaption p{font-size:.78rem}}

@@ -1,6 +1,7 @@
 import { ArrowDownRight, ArrowUpRight, CalendarDays, Clock3, Mail, ShieldCheck, Sparkles, Users } from 'lucide-react';
 import CoachShowcase from './CoachShowcase';
 import Timetable from './Timetable';
+import LeadForm from './LeadForm';
 import { siteUrl } from '../lib/site';
 /* oxlint-disable next/no-img-element, next/no-html-link-for-pages -- Static GitHub Pages export uses optimized supplied assets and plain links. */
 
@@ -126,7 +127,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="coaches-section" id="coaches"><div className="shell"><div className="section-heading light"><div><p className="eyebrow"><span /> Three coaches · one team</p><h2>Different styles.<br /><em>One standard.</em></h2></div><p>Select a coach to explore the experience behind Origin’s Gi, No-Gi and JitzJudo programme.</p></div><figure className="team-photo"><img src={asset('/training/origin-no-gi-roll.webp')} alt="Alan and Ricki training together at Origin" loading="lazy" width="1790" height="1376" /><figcaption>Training together. Teaching with purpose.</figcaption></figure><CoachShowcase coaches={coaches} basePath={basePath} /></div></section>
+      <section className="coaches-section" id="coaches"><div className="shell"><div className="section-heading light"><div><p className="eyebrow"><span /> Three coaches · one team</p><h2>Different styles.<br /><em>One standard.</em></h2></div><p>Select a coach to explore the experience behind Origin’s Gi, No-Gi and JitzJudo programme.</p></div><figure className="team-photo"><img src={asset('/training/origin-no-gi-roll.webp')} alt="Alan and Ricki training together at Origin" loading="lazy" width="1790" height="1376" /><figcaption><span>On the mats at Origin</span><strong>Training together.<br />Teaching with purpose.</strong><p>Alan and Ricki working through No-Gi positions together.</p></figcaption></figure><CoachShowcase coaches={coaches} basePath={basePath} /></div></section>
 
       <section className="approach-section" id="approach"><div className="shell approach-stage"><div className="approach-visual"><img src={asset('/training/origin-gi-grappling.webp')} alt="Origin athletes practising a Gi grappling exchange" loading="lazy" /><div className="approach-copy"><p className="eyebrow"><span /> The Origin approach</p><h2>Problem-solving<br />under pressure.</h2><p className="approach-lead">We teach the decisions behind the technique—so it still works when someone is resisting.</p></div></div><div className="approach-detail"><p className="approach-statement">Position, movement, timing and pressure are taught as one connected system—not a collection of isolated moves.</p><div className="principles">{principles.map(([title, text]) => <div key={title}><h3>{title}</h3><p>{text}</p></div>)}</div><div className="association"><ShieldCheck size={26} /><div><span>Proudly under</span><strong>The Nick Brooks Association</strong><p>A respected lineage and technical foundation connecting Origin to the wider UK BJJ community.</p></div></div></div></div></section>
 
@@ -142,7 +143,7 @@ export default function Home() {
           <div className="contact-copy">
             <p>Ask us about classes, getting started or visiting the new academy. We’ll get back to you as soon as we can.</p>
             <p className="contact-note">Tell us which class interests you and when you would like to visit. Your first class is free.</p>
-            <a className="button button-gold" href="mailto:originmkbjj@gmail.com?subject=My%20first%20Origin%20MK%20BJJ%20class">Email about a free first class <ArrowUpRight size={18} /></a>
+            <LeadForm source="Homepage" />
             <a className="contact-email" href="mailto:originmkbjj@gmail.com"><Mail size={20} /><span><small>Or email us directly</small><strong>originmkbjj@gmail.com</strong></span><ArrowUpRight size={18} /></a>
           </div>
         </div>

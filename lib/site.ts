@@ -1,4 +1,4 @@
-export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'http://originmkbjj.co.uk').replace(/\/$/, '');
+export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://originmkbjj.co.uk').replace(/\/$/, '');
 
 export const programmes = [
   { href: '/beginners/', label: 'Beginners' },

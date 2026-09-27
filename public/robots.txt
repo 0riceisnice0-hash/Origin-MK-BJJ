@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://originmkbjj.co.uk/sitemap.xml
+Sitemap: https://originmkbjj.co.uk/sitemap.xml
