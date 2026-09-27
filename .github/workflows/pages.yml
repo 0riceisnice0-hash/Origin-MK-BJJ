@@ -24,11 +24,18 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - run: npm run lint
+      - run: npx tsc --noEmit
       - run: npm run build
       - name: Prepare GitHub Pages files
         run: |
           mkdir pages-dist
           cp -a dist/client/. pages-dist/
+          for page in beginners gi-jiu-jitsu no-gi jitzjudo; do
+            mkdir -p "pages-dist/$page"
+            cp "pages-dist/$page.html" "pages-dist/$page/index.html"
+          done
+          python scripts/verify_export.py pages-dist
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./pages-dist

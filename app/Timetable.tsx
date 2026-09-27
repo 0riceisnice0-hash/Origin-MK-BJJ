@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+/* oxlint-disable next/no-img-element -- Static GitHub Pages export uses supplied assets. */
 
 type Session = [string, string, string];
 type Day = { day: string; sessions: Session[] };

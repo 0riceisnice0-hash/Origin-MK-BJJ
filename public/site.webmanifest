@@ -1,0 +1,12 @@
+{
+  "name": "Origin Brazilian Jiu-Jitsu Academy",
+  "short_name": "Origin MK BJJ",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#090909",
+  "theme_color": "#090909",
+  "icons": [
+    { "src": "/favicon-48.png", "sizes": "48x48", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
