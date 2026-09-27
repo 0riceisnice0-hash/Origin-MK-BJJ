@@ -4,7 +4,7 @@
 
 - Five indexable pages: the homepage plus distinct beginner, Gi, No-Gi and JitzJudo pages. Each has its own title, description, canonical URL, social image, visible copy and internal links.
 - A sitemap, robots file, favicon, Apple icon and local business structured data.
-- The custom domain is included in the GitHub Pages build output. The build checks the actual exported files before deployment.
+- Canonical and sitemap URLs use the live custom domain. The build checks the actual exported files before deployment. GitHub Pages manages the domain in repository settings; a `CNAME` file is ignored by this Actions deployment.
 - The broken placeholder form was removed. Enquiries currently go to `originmkbjj@gmail.com` through email links, with MAAT available for joining.
 
 ## Actions needed to support a goal of 20 leads per month

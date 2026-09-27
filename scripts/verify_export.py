@@ -21,7 +21,7 @@ for path in pages:
     assert 'REPLACE_WITH_FORM_ID' not in html, f"Broken form: {document}"
     assert 'Peter Olsson' not in html, f"Old coach visible: {document}"
 
-for asset in ["favicon.svg", "favicon-48.png", "apple-touch-icon.png", "site.webmanifest", "brand/origin-logo.webp", "training/origin-no-gi-guard.webp", "training/origin-no-gi-roll.webp", "training/origin-gi-grappling.webp", "robots.txt", "sitemap.xml", "CNAME"]:
+for asset in ["favicon.svg", "favicon-48.png", "apple-touch-icon.png", "site.webmanifest", "brand/origin-logo.webp", "training/origin-no-gi-guard.webp", "training/origin-no-gi-roll.webp", "training/origin-gi-grappling.webp", "robots.txt", "sitemap.xml"]:
     assert (root / asset).is_file(), f"Missing asset: {asset}"
 
 sitemap = (root / "sitemap.xml").read_text(encoding="utf-8")
