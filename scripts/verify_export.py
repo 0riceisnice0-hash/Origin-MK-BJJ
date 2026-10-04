@@ -19,11 +19,13 @@ for path in pages:
     assert '<meta property="og:image" content="' in html, f"Missing social image: {document}"
     assert '<h1' in html, f"Missing heading: {document}"
     assert 'REPLACE_WITH_FORM_ID' not in html, f"Broken form: {document}"
-    assert 'Peter Olsson' not in html, f"Old coach visible: {document}"
     assert '<form id="enquiry-form" class="contact-form" action="https://formspree.io/f/mnpnowpn" method="POST"' in html, f"Missing enquiry form: {document}"
     assert 'name="email"' in html and 'name="message"' in html, f"Missing form fields: {document}"
 
-for asset in ["favicon.svg", "favicon-48.png", "apple-touch-icon.png", "site.webmanifest", "brand/origin-logo.webp", "training/origin-no-gi-guard.webp", "training/origin-no-gi-roll.webp", "training/origin-gi-grappling.webp", "robots.txt", "sitemap.xml"]:
+homepage = (root / "index.html").read_text(encoding="utf-8")
+assert 'Peter Olsson' in homepage and 'Four coaches' in homepage, "Peter's coach profile is missing"
+
+for asset in ["favicon.svg", "favicon-48.png", "apple-touch-icon.png", "site.webmanifest", "brand/origin-logo.webp", "coaches/peter.png", "training/origin-no-gi-guard.webp", "training/origin-no-gi-roll.webp", "training/origin-gi-grappling.webp", "robots.txt", "sitemap.xml"]:
     assert (root / asset).is_file(), f"Missing asset: {asset}"
 
 sitemap = (root / "sitemap.xml").read_text(encoding="utf-8")

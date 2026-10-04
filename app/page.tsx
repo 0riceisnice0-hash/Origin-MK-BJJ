@@ -24,7 +24,7 @@ const coaches = [
     bio: 'Alan brings decades of experience in Judo and Brazilian Jiu-Jitsu to the development of a complete, modern grappling programme.',
     profile: [
       "Alan began his martial arts journey at Northampton Judo Club under Sensei Clive Douglas. His Judo background built an exceptional understanding of balance, movement, timing, throwing mechanics, gripping, positional control and pressure.",
-      "Driven to expand his skills, Alan cross-trained in Brazilian Jiu-Jitsu and developed a fluid, submission-focused style. His Judo and BJJ experience informs a connected approach to standing and ground work.",
+      "Driven to expand his skills, Alan cross-trained in Brazilian Jiu-Jitsu and developed a fluid, submission-focused style. He achieved his BJJ Black Belt under Peter Olsson and Ed Ingamells, continuing his development within a respected UK lineage.",
       "His classes unite Judo-based takedowns, BJJ positional systems, submission grappling and pressure-based control. Alan’s goal is to help every student understand not only what to do, but why they are doing it."
     ],
   },
@@ -44,6 +44,15 @@ const coaches = [
       "A British Masters National BJJ Champion and British Masters Judo bronze medallist, Steve understands how to apply technique against genuine resistance.",
       "He specialises in connecting every phase of grappling: takedown, transition, control and submission. His teaching covers Judo gripping, BJJ positional fundamentals, Gi and lapel control, top pressure and intelligent problem-solving.",
       "Steve’s students learn to control and submit through timing, leverage, positioning and pressure rather than physical strength. Techniques are pressure-tested so students can recognise situations, make decisions and execute when an opponent is trying to stop them."
+    ],
+  },
+  {
+    name: 'Peter Olsson', role: 'Coach & mentor', grade: '2nd Degree BJJ Black Belt · Founder of Viking BJJ', image: '/coaches/peter.png', focus: 'Fundamentals · practical technique · development',
+    bio: 'Peter is an experienced coach, mentor and lifelong student of Jiu-Jitsu who combines strong fundamentals with an enjoyable learning environment.',
+    profile: [
+      "Peter founded Viking Brazilian Jiu-Jitsu in 2016 and has built a reputation for understanding what students need, whether they are taking their first class or developing an advanced game.",
+      "His training includes work with 7th Degree Coral Belt Mauricio Gomes and 3rd Degree Black Belt Nick Brooks. He teaches practical technique, pressure testing and genuine understanding rather than simple memorisation.",
+      "Peter recognises that every student learns differently and trains for different reasons. His classes balance technical detail and high standards with humour, curiosity and an atmosphere where people can progress at their own pace."
     ],
   },
 ];
@@ -83,7 +92,7 @@ export default function Home() {
             <h1>Learn.<br />Improve.<br /><em>Evolve.</em></h1>
             <p className="hero-lead">Brazilian Jiu-Jitsu for complete beginners, experienced grapplers and competitors—built on strong fundamentals, technical precision and training with purpose.</p>
             <div className="hero-actions"><a className="button button-gold" href="#timetable">Find your class <CalendarDays size={19} /></a><a className="text-link" href="#coaches">Meet the coaches <ArrowDownRight size={18} /></a></div>
-            <div className="hero-proof" aria-label="Academy highlights"><div><strong>6 days</strong><span>of training</span></div><div><strong>3 coaches</strong><span>one complete programme</span></div><div><strong>All levels</strong><span>beginners welcome</span></div></div>
+            <div className="hero-proof" aria-label="Academy highlights"><div><strong>6 days</strong><span>of training</span></div><div><strong>4 coaches</strong><span>one complete programme</span></div><div><strong>All levels</strong><span>beginners welcome</span></div></div>
             <figure className="hero-mobile-photo"><img src={asset('/training/origin-no-gi-guard.webp')} alt="Alan and Ricki training No-Gi at Origin MK BJJ" loading="lazy" width="1800" height="1352" /></figure>
           </div>
           <div className="hero-visual">
@@ -127,7 +136,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="coaches-section" id="coaches"><div className="shell"><div className="section-heading light"><div><p className="eyebrow"><span /> Three coaches · one team</p><h2>Different styles.<br /><em>One standard.</em></h2></div><p>Select a coach to explore the experience behind Origin’s Gi, No-Gi and JitzJudo programme.</p></div><figure className="team-photo"><img src={asset('/training/origin-no-gi-roll.webp')} alt="Alan and Ricki training together at Origin" loading="lazy" width="1790" height="1376" /><figcaption><span>On the mats at Origin</span><strong>Training together.<br />Teaching with purpose.</strong><p>Alan and Ricki working through No-Gi positions together.</p></figcaption></figure><CoachShowcase coaches={coaches} basePath={basePath} /></div></section>
+      <section className="coaches-section" id="coaches"><div className="shell"><div className="section-heading light"><div><p className="eyebrow"><span /> Four coaches · one team</p><h2>Different styles.<br /><em>One standard.</em></h2></div><p>Select a coach to explore the experience behind Origin’s Gi, No-Gi and JitzJudo programme.</p></div><figure className="team-photo"><img src={asset('/training/origin-no-gi-roll.webp')} alt="Alan and Ricki training together at Origin" loading="lazy" width="1790" height="1376" /><figcaption><span>On the mats at Origin</span><strong>Training together.<br />Teaching with purpose.</strong><p>Alan and Ricki working through No-Gi positions together.</p></figcaption></figure><CoachShowcase coaches={coaches} basePath={basePath} /></div></section>
 
       <section className="approach-section" id="approach"><div className="shell approach-stage"><div className="approach-visual"><img src={asset('/training/origin-gi-grappling.webp')} alt="Origin athletes practising a Gi grappling exchange" loading="lazy" /><div className="approach-copy"><p className="eyebrow"><span /> The Origin approach</p><h2>Problem-solving<br />under pressure.</h2><p className="approach-lead">We teach the decisions behind the technique—so it still works when someone is resisting.</p></div></div><div className="approach-detail"><p className="approach-statement">Position, movement, timing and pressure are taught as one connected system—not a collection of isolated moves.</p><div className="principles">{principles.map(([title, text]) => <div key={title}><h3>{title}</h3><p>{text}</p></div>)}</div><div className="association"><ShieldCheck size={26} /><div><span>Proudly under</span><strong>The Nick Brooks Association</strong><p>A respected lineage and technical foundation connecting Origin to the wider UK BJJ community.</p></div></div></div></div></section>
 
