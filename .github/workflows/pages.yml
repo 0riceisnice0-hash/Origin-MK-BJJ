@@ -19,6 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -27,18 +29,10 @@ jobs:
       - run: npm run lint
       - run: npx tsc --noEmit
       - run: npm run build
-      - name: Prepare GitHub Pages files
-        run: |
-          mkdir pages-dist
-          cp -a dist/client/. pages-dist/
-          for page in beginners gi-jiu-jitsu no-gi jitzjudo; do
-            mkdir -p "pages-dist/$page"
-            cp "pages-dist/$page.html" "pages-dist/$page/index.html"
-          done
-          python scripts/verify_export.py pages-dist
+      - run: npm run verify:seo
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./pages-dist
+          path: ./dist/client
 
   deploy:
     environment:

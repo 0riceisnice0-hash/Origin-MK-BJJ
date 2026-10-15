@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Photo from './Photo';
 /* oxlint-disable next/no-img-element -- Static GitHub Pages export uses supplied assets. */
 
 type Coach = {
@@ -21,7 +22,7 @@ export default function CoachShowcase({ coaches, basePath }: { coaches: Coach[];
     <div className="coach-roster">
       {coaches.map((coach, index) => <article className="coach-tile" key={coach.name}>
         <figure>
-          <img src={`${basePath}${coach.image}`} alt={`${coach.name}, ${coach.grade}`} />
+          <Photo src={`${basePath}${coach.image}`} alt={`${coach.name}, ${coach.grade}`} loading="lazy" sizes="(max-width: 620px) 45vw, (max-width: 1050px) 44vw, 290px" />
           <figcaption>{coach.role}</figcaption>
         </figure>
         <div className="coach-tile-copy">

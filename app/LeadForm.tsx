@@ -1,11 +1,25 @@
+'use client';
+
+import type { SubmitEvent } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
 const interests = ['Beginners', 'Gi Jiu-Jitsu', 'No-Gi Jiu-Jitsu', 'JitzJudo', 'Membership', 'Something else'];
+const attributionFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'referrer_origin'];
 
 export default function LeadForm({ source, interest }: { source: string; interest?: string }) {
-  return <form id="enquiry-form" className="contact-form" action="https://formspree.io/f/mnpnowpn" method="POST">
+  function captureAttribution(event: SubmitEvent<HTMLFormElement>) {
+    const query = new URLSearchParams(window.location.search);
+    for (const name of attributionFields) {
+      const input = event.currentTarget.elements.namedItem(name) as HTMLInputElement;
+      if (name === 'referrer_origin') {
+        try { input.value = document.referrer ? new URL(document.referrer).origin : ''; } catch { input.value = ''; }
+      } else input.value = (query.get(name) ?? '').slice(0, 160);
+    }
+  }
+  return <form id="enquiry-form" className="contact-form" action="https://formspree.io/f/mnpnowpn" method="POST" onSubmit={captureAttribution}>
     <input type="hidden" name="subject" value="New Origin MK BJJ enquiry from {{ name }}" />
     <input type="hidden" name="source_page" value={source} />
+    {attributionFields.map(name => <input type="hidden" key={name} name={name} defaultValue="" />)}
     <label className="form-honeypot" aria-hidden="true">Leave this empty<input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" /></label>
     <div className="form-row">
       <label><span>Name</span><input type="text" name="name" autoComplete="name" required /></label>

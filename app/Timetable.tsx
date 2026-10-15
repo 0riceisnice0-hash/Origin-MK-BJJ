@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Photo from './Photo';
 /* oxlint-disable next/no-img-element -- Static GitHub Pages export uses supplied assets. */
 
 type Session = [string, string, string];
@@ -24,7 +25,7 @@ export default function Timetable({ schedule, logoSrc }: { schedule: Day[]; logo
   return <div className="timetable-board">
     <div className="timetable-masthead">
       <div><span>Origin MK BJJ</span><h3>Weekly timetable</h3><p>Gi · No-Gi · JitzJudo · Open Mat</p></div>
-      <img src={logoSrc} alt="" aria-hidden="true" />
+      <Photo src={logoSrc} alt="" aria-hidden="true" sizes="200px" loading="lazy" />
     </div>
     <div className="timetable-tabs" role="tablist" aria-label="Choose a day">
       {days.map((item, index) => <button key={item.day} type="button" role="tab" aria-selected={activeDay === index} onClick={() => setActiveDay(index)}><span>{item.day.slice(0, 3)}</span><small>{item.sessions.length || '—'}</small></button>)}

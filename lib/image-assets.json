@@ -1,0 +1,122 @@
+{
+  "/training/between-rounds.jpg": {
+    "src": "/images/training/between-rounds-1400.webp",
+    "width": 1440,
+    "height": 1799,
+    "srcSet": "/images/training/between-rounds-480.webp 480w, /images/training/between-rounds-900.webp 900w, /images/training/between-rounds-1400.webp 1400w"
+  },
+  "/training/coach-observing.jpg": {
+    "src": "/images/training/coach-observing-1400.webp",
+    "width": 1440,
+    "height": 1800,
+    "srcSet": "/images/training/coach-observing-480.webp 480w, /images/training/coach-observing-900.webp 900w, /images/training/coach-observing-1400.webp 1400w"
+  },
+  "/training/gi-groundwork.jpg": {
+    "src": "/images/training/gi-groundwork-1057.webp",
+    "width": 1057,
+    "height": 1321,
+    "srcSet": "/images/training/gi-groundwork-480.webp 480w, /images/training/gi-groundwork-900.webp 900w, /images/training/gi-groundwork-1057.webp 1057w"
+  },
+  "/training/gi-guard.jpg": {
+    "src": "/images/training/gi-guard-1400.webp",
+    "width": 1440,
+    "height": 1799,
+    "srcSet": "/images/training/gi-guard-480.webp 480w, /images/training/gi-guard-900.webp 900w, /images/training/gi-guard-1400.webp 1400w"
+  },
+  "/training/gi-partners.jpg": {
+    "src": "/images/training/gi-partners-1400.webp",
+    "width": 1440,
+    "height": 1799,
+    "srcSet": "/images/training/gi-partners-480.webp 480w, /images/training/gi-partners-900.webp 900w, /images/training/gi-partners-1400.webp 1400w"
+  },
+  "/training/gi-standup.jpg": {
+    "src": "/images/training/gi-standup-1400.webp",
+    "width": 1440,
+    "height": 1800,
+    "srcSet": "/images/training/gi-standup-480.webp 480w, /images/training/gi-standup-900.webp 900w, /images/training/gi-standup-1400.webp 1400w"
+  },
+  "/training/hero-no-gi-clinch.jpg": {
+    "src": "/images/training/hero-no-gi-clinch-1400.webp",
+    "width": 1440,
+    "height": 1800,
+    "srcSet": "/images/training/hero-no-gi-clinch-480.webp 480w, /images/training/hero-no-gi-clinch-900.webp 900w, /images/training/hero-no-gi-clinch-1400.webp 1400w"
+  },
+  "/training/no-gi-grappling.jpg": {
+    "src": "/images/training/no-gi-grappling-1400.webp",
+    "width": 1440,
+    "height": 1800,
+    "srcSet": "/images/training/no-gi-grappling-480.webp 480w, /images/training/no-gi-grappling-900.webp 900w, /images/training/no-gi-grappling-1400.webp 1400w"
+  },
+  "/training/no-gi-open-guard.jpg": {
+    "src": "/images/training/no-gi-open-guard-1400.webp",
+    "width": 1440,
+    "height": 1802,
+    "srcSet": "/images/training/no-gi-open-guard-480.webp 480w, /images/training/no-gi-open-guard-900.webp 900w, /images/training/no-gi-open-guard-1400.webp 1400w"
+  },
+  "/training/no-gi-throw.jpg": {
+    "src": "/images/training/no-gi-throw-1400.webp",
+    "width": 1440,
+    "height": 1800,
+    "srcSet": "/images/training/no-gi-throw-480.webp 480w, /images/training/no-gi-throw-900.webp 900w, /images/training/no-gi-throw-1400.webp 1400w"
+  },
+  "/training/no-gi-wrestling.jpg": {
+    "src": "/images/training/no-gi-wrestling-1400.webp",
+    "width": 1440,
+    "height": 1799,
+    "srcSet": "/images/training/no-gi-wrestling-480.webp 480w, /images/training/no-gi-wrestling-900.webp 900w, /images/training/no-gi-wrestling-1400.webp 1400w"
+  },
+  "/training/origin-gi-grappling.webp": {
+    "src": "/images/training/origin-gi-grappling-1400.webp",
+    "width": 1542,
+    "height": 1542,
+    "srcSet": "/images/training/origin-gi-grappling-480.webp 480w, /images/training/origin-gi-grappling-900.webp 900w, /images/training/origin-gi-grappling-1400.webp 1400w"
+  },
+  "/training/origin-no-gi-guard.webp": {
+    "src": "/images/training/origin-no-gi-guard-1400.webp",
+    "width": 1800,
+    "height": 1353,
+    "srcSet": "/images/training/origin-no-gi-guard-480.webp 480w, /images/training/origin-no-gi-guard-900.webp 900w, /images/training/origin-no-gi-guard-1400.webp 1400w"
+  },
+  "/training/origin-no-gi-roll.webp": {
+    "src": "/images/training/origin-no-gi-roll-1400.webp",
+    "width": 1800,
+    "height": 1383,
+    "srcSet": "/images/training/origin-no-gi-roll-480.webp 480w, /images/training/origin-no-gi-roll-900.webp 900w, /images/training/origin-no-gi-roll-1400.webp 1400w"
+  },
+  "/coaches/alan.jpg": {
+    "src": "/images/coaches/alan-995.webp",
+    "width": 995,
+    "height": 1398,
+    "srcSet": "/images/coaches/alan-480.webp 480w, /images/coaches/alan-900.webp 900w, /images/coaches/alan-995.webp 995w"
+  },
+  "/coaches/peter.png": {
+    "src": "/images/coaches/peter-1400.webp",
+    "width": 1414,
+    "height": 2000,
+    "srcSet": "/images/coaches/peter-480.webp 480w, /images/coaches/peter-900.webp 900w, /images/coaches/peter-1400.webp 1400w"
+  },
+  "/coaches/ricki.png": {
+    "src": "/images/coaches/ricki-1400.webp",
+    "width": 1414,
+    "height": 2000,
+    "srcSet": "/images/coaches/ricki-480.webp 480w, /images/coaches/ricki-900.webp 900w, /images/coaches/ricki-1400.webp 1400w"
+  },
+  "/coaches/steve.png": {
+    "src": "/images/coaches/steve-1400.webp",
+    "width": 1414,
+    "height": 2000,
+    "srcSet": "/images/coaches/steve-480.webp 480w, /images/coaches/steve-900.webp 900w, /images/coaches/steve-1400.webp 1400w"
+  },
+  "/brand/origin-logo.jpg": {
+    "src": "/images/brand/origin-logo-480.webp",
+    "width": 1561,
+    "height": 1008,
+    "srcSet": "/images/brand/origin-logo-240.webp 240w, /images/brand/origin-logo-480.webp 480w"
+  },
+  "/brand/origin-logo.webp": {
+    "src": "/images/brand/origin-logo-480.webp",
+    "width": 1490,
+    "height": 705,
+    "srcSet": "/images/brand/origin-logo-240.webp 240w, /images/brand/origin-logo-480.webp 480w"
+  }
+}

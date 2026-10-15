@@ -1,0 +1,68 @@
+{
+  "home": {
+    "path": "/",
+    "title": "BJJ Milton Keynes | Brazilian Jiu-Jitsu Classes",
+    "description": "Brazilian Jiu-Jitsu in Kiln Farm, Milton Keynes. Beginner BJJ, Gi, No-Gi and JitzJudo with four coaches. Enquire about your free first class.",
+    "image": "/training/origin-no-gi-guard.webp"
+  },
+  "beginners": {
+    "path": "/beginners/",
+    "title": "Beginner BJJ in Milton Keynes | First Class Free",
+    "description": "Start BJJ at Origin MK BJJ, Kiln Farm. Beginner classes on Tuesday and Friday, clear guidance on kit and a free first class. Enquire before your visit.",
+    "image": "/training/gi-partners.jpg"
+  },
+  "gi-jiu-jitsu": {
+    "path": "/gi-jiu-jitsu/",
+    "title": "Gi Brazilian Jiu-Jitsu in Milton Keynes",
+    "description": "Learn Gi BJJ in Kiln Farm, Milton Keynes. Train grips, takedowns, positional control and submissions with Origin MK BJJ. Your first class is free.",
+    "image": "/training/gi-groundwork.jpg"
+  },
+  "no-gi": {
+    "path": "/no-gi/",
+    "title": "No-Gi BJJ & Grappling in Milton Keynes",
+    "description": "No-Gi Jiu-Jitsu in Milton Keynes: Tuesday beginner fundamentals, Thursday with Ricki and lunchtime sessions. Try your first class free at Origin.",
+    "image": "/training/origin-no-gi-guard.webp"
+  },
+  "jitzjudo": {
+    "path": "/jitzjudo/",
+    "title": "JitzJudo & Judo for BJJ in Milton Keynes",
+    "description": "Connect Judo takedowns with BJJ groundwork at Origin MK BJJ, Kiln Farm. JitzJudo with Alan on Wednesday and Saturday. Ask about your first session.",
+    "image": "/training/gi-standup.jpg"
+  },
+  "timetable": {
+    "path": "/timetable/",
+    "title": "BJJ Class Timetable in Milton Keynes",
+    "description": "Find beginner BJJ, Gi, No-Gi, JitzJudo and open mat times at Origin MK BJJ in Kiln Farm. Six training days, including lunchtime and evening classes.",
+    "image": "/training/origin-no-gi-roll.webp"
+  },
+  "find-us": {
+    "path": "/find-us/",
+    "title": "Find Origin MK BJJ in Kiln Farm, Milton Keynes",
+    "description": "Visit Origin MK BJJ at Unit 8, Potters Lane, Kiln Farm, Milton Keynes MK11 3HE. Open the Google listing, plan a first visit or ask about classes.",
+    "image": "/training/between-rounds.jpg"
+  },
+  "coaches": {
+    "path": "/coaches/",
+    "title": "BJJ Coaches in Milton Keynes | Meet the Team",
+    "description": "Meet Origin MK BJJ coaches Alan Mineards, Ricki Shortland, Steve Freezer and Peter Olsson. Read their backgrounds and approach to Gi, No-Gi and JitzJudo.",
+    "image": "/training/coach-observing.jpg"
+  },
+  "first-bjj-class": {
+    "path": "/first-bjj-class/",
+    "title": "Your First BJJ Class: What to Wear & Expect",
+    "description": "Preparing for a first Brazilian Jiu-Jitsu class? Read Origin MK BJJ’s guide to kit, session structure, tapping and mat etiquette before training in Milton Keynes.",
+    "image": "/training/gi-partners.jpg"
+  },
+  "gi-vs-no-gi": {
+    "path": "/gi-vs-no-gi/",
+    "title": "Gi vs No-Gi BJJ: Which Class Should You Try?",
+    "description": "Compare Gi and No-Gi Jiu-Jitsu: clothing, grips, pace and beginner options. Find the right first class at Origin MK BJJ in Milton Keynes.",
+    "image": "/training/no-gi-grappling.jpg"
+  },
+  "bjj-faq": {
+    "path": "/bjj-faq/",
+    "title": "BJJ FAQs: Cost, Kit & Getting Started",
+    "description": "Answers to common BJJ questions at Origin MK BJJ: your free first class, membership enquiries, fitness, what to wear and where to train in Milton Keynes.",
+    "image": "/training/gi-guard.jpg"
+  }
+}
